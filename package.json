@@ -13,7 +13,7 @@
     "prettier": "^2.5.1",
     "turbo": "^1.9.7"
   },
-  "name": "ui",
+  "name": "damons-ui",
   "packageManager": "yarn@3.5.1",
   "workspaces": [
     "apps/*",
