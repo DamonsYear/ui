@@ -14,7 +14,7 @@
     "turbo": "^1.9.7"
   },
   "name": "ui",
-  "packageManager": "yarn@1.22.19",
+  "packageManager": "yarn@3.5.1",
   "workspaces": [
     "apps/*",
     "packages/*"
