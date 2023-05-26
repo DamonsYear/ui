@@ -59,6 +59,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:7.32.0"],\
             ["eslint-config-custom", "workspace:packages/eslint-config-custom"],\
             ["husky", "npm:8.0.3"],\
+            ["pinst", "npm:3.0.0"],\
             ["prettier", "npm:2.8.8"],\
             ["turbo", "npm:1.9.9"]\
           ],\
@@ -1685,6 +1686,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:7.32.0"],\
             ["eslint-config-custom", "workspace:packages/eslint-config-custom"],\
             ["husky", "npm:8.0.3"],\
+            ["pinst", "npm:3.0.0"],\
             ["prettier", "npm:2.8.8"],\
             ["turbo", "npm:1.9.9"]\
           ],\
@@ -4830,6 +4832,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/picomatch-npm-2.3.1-c782cfd986-050c865ce8.zip/node_modules/picomatch/",\
           "packageDependencies": [\
             ["picomatch", "npm:2.3.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["pinst", [\
+        ["npm:3.0.0", {\
+          "packageLocation": "./.yarn/cache/pinst-npm-3.0.0-5d2b6c1dda-4ae48a6a60.zip/node_modules/pinst/",\
+          "packageDependencies": [\
+            ["pinst", "npm:3.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\
