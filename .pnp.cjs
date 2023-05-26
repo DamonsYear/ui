@@ -56,6 +56,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@turbo/gen", "npm:1.9.9"],\
             ["eslint", "npm:7.32.0"],\
             ["eslint-config-custom", "workspace:packages/eslint-config-custom"],\
+            ["husky", "npm:8.0.3"],\
             ["prettier", "npm:2.8.8"],\
             ["turbo", "npm:1.9.9"]\
           ],\
@@ -1275,6 +1276,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@turbo/gen", "npm:1.9.9"],\
             ["eslint", "npm:7.32.0"],\
             ["eslint-config-custom", "workspace:packages/eslint-config-custom"],\
+            ["husky", "npm:8.0.3"],\
             ["prettier", "npm:2.8.8"],\
             ["turbo", "npm:1.9.9"]\
           ],\
@@ -2692,6 +2694,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/human-signals-npm-4.3.1-d723001512-6f12958df3.zip/node_modules/human-signals/",\
           "packageDependencies": [\
             ["human-signals", "npm:4.3.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["husky", [\
+        ["npm:8.0.3", {\
+          "packageLocation": "./.yarn/cache/husky-npm-8.0.3-b0b59c5127-837bc7e441.zip/node_modules/husky/",\
+          "packageDependencies": [\
+            ["husky", "npm:8.0.3"]\
           ],\
           "linkType": "HARD"\
         }]\
