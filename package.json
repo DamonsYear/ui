@@ -18,6 +18,7 @@
     "eslint": "^7.32.0",
     "eslint-config-custom": "*",
     "husky": "^8.0.0",
+    "lint-staged": "^13.2.2",
     "pinst": "^3.0.0",
     "prettier": "^2.5.1",
     "turbo": "^1.9.7"
@@ -37,5 +38,11 @@
     "cz-conventional-changelog@3.3.0": {
       "unplugged": true
     }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   }
 }

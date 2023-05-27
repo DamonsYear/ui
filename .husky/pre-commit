@@ -3,4 +3,4 @@
 
 echo "✅ husky pre-commit init"
 
-yarn commit || exit
+yarn lint-staged
