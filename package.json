@@ -21,6 +21,7 @@
     "lint-staged": "^13.2.2",
     "pinst": "^3.0.0",
     "prettier": "^2.5.1",
+    "prettier-config-custom": "workspace:^",
     "turbo": "^1.9.7"
   },
   "name": "damons-ui",

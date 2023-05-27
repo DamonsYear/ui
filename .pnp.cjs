@@ -28,6 +28,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:packages/eslint-config-custom"\
       },\
       {\
+        "name": "prettier-config-custom",\
+        "reference": "workspace:packages/prettier-config-custom"\
+      },\
+      {\
         "name": "tsconfig",\
         "reference": "workspace:packages/tsconfig"\
       },\
@@ -42,6 +46,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["damons-ui", ["workspace:."]],\
       ["docs", ["workspace:apps/docs"]],\
       ["eslint-config-custom", ["workspace:packages/eslint-config-custom"]],\
+      ["prettier-config-custom", ["workspace:packages/prettier-config-custom"]],\
       ["tsconfig", ["workspace:packages/tsconfig"]],\
       ["ui", ["workspace:packages/ui"]],\
       ["web", ["workspace:apps/web"]]\
@@ -64,6 +69,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lint-staged", "npm:13.2.2"],\
             ["pinst", "npm:3.0.0"],\
             ["prettier", "npm:2.8.8"],\
+            ["prettier-config-custom", "workspace:packages/prettier-config-custom"],\
             ["turbo", "npm:1.9.9"]\
           ],\
           "linkType": "SOFT"\
@@ -1810,6 +1816,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lint-staged", "npm:13.2.2"],\
             ["pinst", "npm:3.0.0"],\
             ["prettier", "npm:2.8.8"],\
+            ["prettier-config-custom", "workspace:packages/prettier-config-custom"],\
             ["turbo", "npm:1.9.9"]\
           ],\
           "linkType": "SOFT"\
@@ -5302,6 +5309,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prettier", "npm:2.8.8"]\
           ],\
           "linkType": "HARD"\
+        }]\
+      ]],\
+      ["prettier-config-custom", [\
+        ["workspace:packages/prettier-config-custom", {\
+          "packageLocation": "./packages/prettier-config-custom/",\
+          "packageDependencies": [\
+            ["prettier-config-custom", "workspace:packages/prettier-config-custom"],\
+            ["prettier", "npm:2.8.8"]\
+          ],\
+          "linkType": "SOFT"\
         }]\
       ]],\
       ["progress", [\
