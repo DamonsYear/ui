@@ -1,4 +1,11 @@
 {
+  "name": "damons-ui",
+  "packageManager": "yarn@3.5.1",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "ui"
+  ],
   "private": true,
   "scripts": {
     "commit": "cz",
@@ -26,12 +33,6 @@
     "turbo": "^1.9.7",
     "typescript": "^5.0.4"
   },
-  "name": "damons-ui",
-  "packageManager": "yarn@3.5.1",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"

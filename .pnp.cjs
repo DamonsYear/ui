@@ -37,7 +37,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       },\
       {\
         "name": "ui",\
-        "reference": "workspace:packages/ui"\
+        "reference": "workspace:ui"\
       }\
     ],\
     "enableTopLevelFallback": true,\
@@ -48,7 +48,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["eslint-config-custom", ["workspace:packages/eslint-config-custom"]],\
       ["prettier-config-custom", ["workspace:packages/prettier-config-custom"]],\
       ["tsconfig", ["workspace:packages/tsconfig"]],\
-      ["ui", ["workspace:packages/ui"]],\
+      ["ui", ["workspace:ui"]],\
       ["web", ["workspace:apps/web"]]\
     ],\
     "fallbackPool": [\
@@ -2303,7 +2303,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:ba56dc173c7ece72e1480aefcd1d10cda1629de2daa7f61b603fae838675c08883d872a9392eb3e84cc530eed79a8c2786d69c2798b8351fc0bd584f41a8d550#npm:18.2.0"],\
             ["tsconfig", "workspace:packages/tsconfig"],\
             ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=289587"],\
-            ["ui", "workspace:packages/ui"]\
+            ["ui", "workspace:ui"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -5495,13 +5495,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["prettier-config-custom", [\
-        ["npm:0.0.0", {\
-          "packageLocation": "./.yarn/cache/prettier-config-custom-npm-0.0.0-acad4cc0a5-70b5a42fcf.zip/node_modules/prettier-config-custom/",\
-          "packageDependencies": [\
-            ["prettier-config-custom", "npm:0.0.0"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["workspace:packages/prettier-config-custom", {\
           "packageLocation": "./packages/prettier-config-custom/",\
           "packageDependencies": [\
@@ -6813,15 +6806,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["ui", [\
-        ["workspace:packages/ui", {\
-          "packageLocation": "./packages/ui/",\
+        ["workspace:ui", {\
+          "packageLocation": "./ui/",\
           "packageDependencies": [\
-            ["ui", "workspace:packages/ui"],\
+            ["ui", "workspace:ui"],\
             ["@types/react", "npm:18.2.7"],\
             ["@types/react-dom", "npm:18.2.4"],\
             ["eslint", "npm:7.32.0"],\
             ["eslint-config-custom", "workspace:packages/eslint-config-custom"],\
-            ["prettier-config-custom", "npm:0.0.0"],\
+            ["prettier-config-custom", "workspace:packages/prettier-config-custom"],\
             ["react", "npm:17.0.2"],\
             ["tsconfig", "workspace:packages/tsconfig"],\
             ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=289587"]\
@@ -6939,7 +6932,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:ba56dc173c7ece72e1480aefcd1d10cda1629de2daa7f61b603fae838675c08883d872a9392eb3e84cc530eed79a8c2786d69c2798b8351fc0bd584f41a8d550#npm:18.2.0"],\
             ["tsconfig", "workspace:packages/tsconfig"],\
             ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=289587"],\
-            ["ui", "workspace:packages/ui"]\
+            ["ui", "workspace:ui"]\
           ],\
           "linkType": "SOFT"\
         }]\
