@@ -14,7 +14,6 @@
     "@changesets/cli": "^2.26.1",
     "@commitlint/cli": "^17.6.3",
     "@commitlint/config-conventional": "^17.6.3",
-    "@turbo/gen": "^1.9.7",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.32.0",
@@ -24,7 +23,8 @@
     "pinst": "^3.0.0",
     "prettier": "^2.5.1",
     "prettier-config-custom": "workspace:^",
-    "turbo": "^1.9.7"
+    "turbo": "^1.9.7",
+    "typescript": "^5.0.4"
   },
   "name": "damons-ui",
   "packageManager": "yarn@3.5.1",
