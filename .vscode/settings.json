@@ -17,8 +17,7 @@
     "javascript",
     "javascriptreact",
     "typescript",
-    "typescriptreact",
-    "json"
+    "typescriptreact"
   ],
   "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

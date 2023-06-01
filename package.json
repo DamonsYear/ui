@@ -24,7 +24,7 @@
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.32.0",
-    "eslint-config-custom": "*",
+    "eslint-config-custom": "workspace:^",
     "husky": "^8.0.0",
     "lint-staged": "^13.2.2",
     "pinst": "^3.0.0",
@@ -48,5 +48,8 @@
       "prettier --write",
       "eslint --fix"
     ]
+  },
+  "dependencies": {
+    "css-in-js": "workspace:^"
   }
 }

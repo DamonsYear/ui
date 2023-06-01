@@ -1,0 +1,9 @@
+{
+  "name": "css-in-js",
+  "main": "index.js",
+  "packageManager": "yarn@3.5.1",
+  "dependencies": {
+    "@types/styled-components": "^5.1.26",
+    "styled-components": "^5.3.11"
+  }
+}
