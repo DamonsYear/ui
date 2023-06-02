@@ -16,6 +16,6 @@
     // .d.ts 파일이 .js 파일 옆에 생성됩니다.
     "outDir": "dist"
   },
-  "include": ["."],
+  "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["dist", "build", "node_modules", ".yarn"]
 }

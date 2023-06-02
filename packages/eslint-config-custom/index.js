@@ -7,6 +7,7 @@ module.exports = {
   rules: {
     "no-undef": "off",
     "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "error",
     "no-shadow": "off",
     "no-restricted-syntax": [
       "error",

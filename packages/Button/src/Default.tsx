@@ -101,7 +101,7 @@ export function Button({
       $transform={transform}
       $transtion={transtion}
     >
-      index
+      index2
     </Button.Style>
   );
 }

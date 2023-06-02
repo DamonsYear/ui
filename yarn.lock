@@ -622,9 +622,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@damons-year/ui@workspace:^, @damons-year/ui@workspace:packages/ui":
+"@damons-ui/button@workspace:^, @damons-ui/button@workspace:packages/Button":
   version: 0.0.0-use.local
-  resolution: "@damons-year/ui@workspace:packages/ui"
+  resolution: "@damons-ui/button@workspace:packages/Button"
   dependencies:
     "@types/react": ^18.2.0
     "@types/react-dom": ^18.2.0
@@ -638,7 +638,7 @@ __metadata:
     prettier-config-custom: "*"
     react: ^17.0.2
     tsconfig: "workspace:^"
-    typescript: ^4.5.2
+    typescript: ^5.0.4
   languageName: unknown
   linkType: soft
 
@@ -2257,9 +2257,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"damons-year@workspace:.":
+"damons-ui@workspace:.":
   version: 0.0.0-use.local
-  resolution: "damons-year@workspace:."
+  resolution: "damons-ui@workspace:."
   dependencies:
     "@changesets/cli": ^2.26.1
     "@commitlint/cli": ^17.6.3
@@ -2278,8 +2278,6 @@ __metadata:
     typescript: ^5.0.4
   dependenciesMeta:
     cz-conventional-changelog@3.3.0:
-      unplugged: true
-    eslint-plugin-turbo@1.10.1:
       unplugged: true
   languageName: unknown
   linkType: soft
@@ -2451,7 +2449,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "docs@workspace:apps/docs"
   dependencies:
-    "@damons-year/ui": "workspace:^"
+    "@damons-ui/button": "workspace:^"
     "@types/node": ^17.0.12
     "@types/react": ^18.0.22
     "@types/react-dom": ^18.0.7
@@ -6531,7 +6529,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.5.2, typescript@npm:^4.5.3":
+"typescript@npm:^4.5.3":
   version: 4.9.5
   resolution: "typescript@npm:4.9.5"
   bin:
@@ -6551,7 +6549,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.5.2#~builtin<compat/typescript>, typescript@patch:typescript@^4.5.3#~builtin<compat/typescript>":
+"typescript@patch:typescript@^4.5.3#~builtin<compat/typescript>":
   version: 4.9.5
   resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=289587"
   bin:
@@ -6657,7 +6655,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "web@workspace:apps/web"
   dependencies:
-    "@damons-year/ui": "workspace:^"
+    "@damons-ui/button": "workspace:^"
     "@types/node": ^17.0.12
     "@types/react": ^18.0.22
     "@types/react-dom": ^18.0.7
