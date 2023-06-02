@@ -1,10 +1,12 @@
-import React from "react";
+import React, { PropsWithChildren } from "react";
 import styled from "css-in-js";
 import { CSSProps, StyledComponentCSSProps } from "../types/css";
 
-type TButton = CSSProps;
+type TButton = CSSProps & PropsWithChildren;
 
 export function Button({
+  children,
+
   boxSizing,
 
   zIndex,
@@ -101,7 +103,7 @@ export function Button({
       $transform={transform}
       $transtion={transtion}
     >
-      index2
+      {children}
     </Button.Style>
   );
 }
