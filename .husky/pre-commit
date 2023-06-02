@@ -4,3 +4,11 @@
 echo "💄 lint-staged check..."
 
 yarn lint-staged
+
+echo "✅ lint check completed! 👏🏻"
+
+echo "🔍 TS check start..."
+
+yarn turbo run type-check
+
+echo "✅ Both are completed! 🥰"
