@@ -1,6 +1,7 @@
 {
   "extends": "tsconfig/react-library.json",
   "compilerOptions": {
+    "rootDir": ".",
     // 일반적으로 소스 파일로 무시되기 때문에,
     // TypeScript가 JS 파일을 읽도록 지시합니다.
     "allowJs": true,
@@ -9,11 +10,12 @@
     // 컴파일러 실행이 오직
     // d.ts 파일만 출력하게 합니다.
     "emitDeclarationOnly": true,
+    "jsx": "preserve",
     // 타입은 이 디렉터리 안에 존재해야 합니다.
     // 해당 설정을 제거하면,
     // .d.ts 파일이 .js 파일 옆에 생성됩니다.
     "outDir": "dist"
   },
   "include": ["."],
-  "exclude": ["dist", "build", "node_modules"]
+  "exclude": ["dist", "build", "node_modules", ".yarn"]
 }

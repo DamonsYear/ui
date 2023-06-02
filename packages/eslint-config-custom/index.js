@@ -1,35 +1,26 @@
 module.exports = {
-  env: {
-    browser: true,
-    es2021: true,
-    node: true,
-  },
-  extends: ["next", "turbo", "plugin:react/recommended", "google", "prettier"],
+  parser: "@typescript-eslint/parser",
+
+  extends: ["turbo", "google", "prettier"],
+  plugins: ["@typescript-eslint"],
+
   rules: {
-    "@next/next/no-html-link-for-pages": "off",
+    "no-undef": "off",
+    "no-unused-vars": "off",
+    "no-shadow": "off",
+    "no-restricted-syntax": [
+      "error",
+      {
+        selector: "ForInStatement",
+        message: "Don't use `for A in B`",
+      },
+      {
+        selector: "WithStatement",
+        message: "Don't use `with`",
+      },
+    ],
+    "import/prefer-default-export": "off",
+    "require-jsdoc": "off",
   },
-  overrides: [
-    {
-      files: ["**/*.ts", "**/*.tsx"],
-      parser: "@typescript-eslint/parser",
-      parserOptions: {
-        ecmaFeatures: {
-          jsx: true,
-        },
-        ecmaVersion: "latest",
-        sourceType: "module",
-      },
-      settings: {
-        react: {
-          version: "^18.2.0",
-        },
-      },
-      plugins: ["react", "@typescript-eslint"],
-      rules: {
-        "no-unused-vars": "off",
-        "react/prop-types": "off",
-        "require-jsdoc": "off",
-      },
-    },
-  ],
+  ignorePatterns: ["**/lib/**/*", "**/dist/**/*"],
 };

@@ -1,18 +1,18 @@
-enum Directions {
+export enum Directions {
   "top" = "top",
   "right" = "right",
   "bottom" = "bottom",
   "left" = "left",
 }
 
-declare type CSSPositions = {
-  [k in Directions]: string | number;
-};
-
 export type BoxSizing = "content-box" | "border-box" | "inherit";
 export type ZIndex = number;
 export type Display = "flex" | "inline-flex" | "block" | "inline" | "none";
 export type FlexDirection = "row" | "column" | "row-reverse" | "column-reverse";
+
+declare type CSSPositions = {
+  [k in Directions]: string | number;
+};
 
 declare type CSSProps = {
   boxSizing?: BoxSizing;
