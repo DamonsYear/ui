@@ -28,6 +28,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:packages/Button"\
       },\
       {\
+        "name": "@damons-ui/react-core",\
+        "reference": "workspace:packages/core/react"\
+      },\
+      {\
         "name": "css-in-js",\
         "reference": "workspace:packages/css-in-js"\
       },\
@@ -48,6 +52,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
     "fallbackExclusionList": [\
       ["@damons-ui/button", ["workspace:packages/Button"]],\
+      ["@damons-ui/react-core", ["workspace:packages/core/react"]],\
       ["css-in-js", ["workspace:packages/css-in-js"]],\
       ["damons-ui", ["workspace:."]],\
       ["docs", ["workspace:apps/docs"]],\
@@ -767,6 +772,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-turbo", "virtual:9281c53df62a80904f233e3b5c9a7617940be30b7fd378d389eaa37778ecbcc88489a131ef16b359275c4fdef375e5b67342a854aff466c1f67c3a38ac7b06d8#npm:1.10.1"],\
             ["prettier-config-custom", "workspace:packages/prettier-config-custom"],\
             ["react", "npm:17.0.2"],\
+            ["tsconfig", "workspace:packages/tsconfig"],\
+            ["typescript", "patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=b5f058"]\
+          ],\
+          "linkType": "SOFT"\
+        }]\
+      ]],\
+      ["@damons-ui/react-core", [\
+        ["workspace:packages/core/react", {\
+          "packageLocation": "./packages/core/react/",\
+          "packageDependencies": [\
+            ["@damons-ui/react-core", "workspace:packages/core/react"],\
+            ["@types/react", "npm:18.2.7"],\
+            ["@types/react-dom", "npm:18.2.4"],\
+            ["@typescript-eslint/eslint-plugin", "virtual:9281c53df62a80904f233e3b5c9a7617940be30b7fd378d389eaa37778ecbcc88489a131ef16b359275c4fdef375e5b67342a854aff466c1f67c3a38ac7b06d8#npm:5.59.8"],\
+            ["css-in-js", "workspace:packages/css-in-js"],\
+            ["eslint", "npm:7.32.0"],\
+            ["eslint-config-custom", "workspace:packages/eslint-config-custom"],\
+            ["eslint-plugin-import", "virtual:9281c53df62a80904f233e3b5c9a7617940be30b7fd378d389eaa37778ecbcc88489a131ef16b359275c4fdef375e5b67342a854aff466c1f67c3a38ac7b06d8#npm:2.27.5"],\
+            ["eslint-plugin-react", "virtual:9281c53df62a80904f233e3b5c9a7617940be30b7fd378d389eaa37778ecbcc88489a131ef16b359275c4fdef375e5b67342a854aff466c1f67c3a38ac7b06d8#npm:7.32.2"],\
+            ["eslint-plugin-turbo", "virtual:9281c53df62a80904f233e3b5c9a7617940be30b7fd378d389eaa37778ecbcc88489a131ef16b359275c4fdef375e5b67342a854aff466c1f67c3a38ac7b06d8#npm:1.10.1"],\
+            ["prettier-config-custom", "workspace:packages/prettier-config-custom"],\
+            ["react", "npm:18.2.0"],\
             ["tsconfig", "workspace:packages/tsconfig"],\
             ["typescript", "patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=b5f058"]\
           ],\
