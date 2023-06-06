@@ -1,34 +1,36 @@
 import type * as CSS from "csstype";
 
-export type ComponentBaseCSSProps = CSS.Properties<string | number>;
-export type ComponentHoverProps = {
-  _hover?: ComponentBaseCSSProps;
+export type PseudosPropKey =
+  | "_after"
+  | "_before"
+  | "_backdrop"
+  | "_placeholder"
+  | "_active"
+  | "_after"
+  | "_before"
+  | "_checked"
+  | "_default"
+  | "_defined"
+  | "_disabled"
+  | "_empty"
+  | "_enabled"
+  | "_first"
+  | "_firstChild"
+  | "_firstLetter"
+  | "_firstLine"
+  | "_firstOfType"
+  | "_focus"
+  | "_focusWithin"
+  | "_hover"
+  | "_valid"
+  | "_invalid"
+  | "_lastOfType"
+  | "_required"
+  | "_visited";
+
+export type ComponentBaseCSS = CSS.Properties<string | number>;
+export type ComponentPseudoCSS = ComponentBaseCSS & {
+  [P in PseudosPropKey]?: ComponentBaseCSS;
 };
 
-export type ComponentActiveProps = {
-  _active?: ComponentBaseCSSProps;
-};
-
-export type ComponentDisabledProps = {
-  _disabled?: ComponentBaseCSSProps;
-};
-
-export type ComponentCheckedProps = {
-  _checked?: ComponentBaseCSSProps;
-};
-
-export type ComponentPseudoBeforeProps = {
-  _before?: ComponentBaseCSSProps;
-};
-
-export type ComponentPseudoAfterProps = {
-  _after?: ComponentBaseCSSProps;
-};
-
-export type CSSProps = ComponentBaseCSSProps &
-  ComponentHoverProps &
-  ComponentActiveProps &
-  ComponentDisabledProps &
-  ComponentCheckedProps &
-  ComponentPseudoBeforeProps &
-  ComponentPseudoAfterProps;
+export type CSSProps = ComponentBaseCSS & ComponentPseudoCSS;
