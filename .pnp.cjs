@@ -787,6 +787,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-dom", "npm:18.2.4"],\
             ["@typescript-eslint/eslint-plugin", "virtual:9281c53df62a80904f233e3b5c9a7617940be30b7fd378d389eaa37778ecbcc88489a131ef16b359275c4fdef375e5b67342a854aff466c1f67c3a38ac7b06d8#npm:5.59.8"],\
             ["css-in-js", "workspace:packages/css-in-js"],\
+            ["csstype", "npm:3.1.2"],\
             ["eslint", "npm:7.32.0"],\
             ["eslint-config-custom", "workspace:packages/eslint-config-custom"],\
             ["eslint-plugin-import", "virtual:9281c53df62a80904f233e3b5c9a7617940be30b7fd378d389eaa37778ecbcc88489a131ef16b359275c4fdef375e5b67342a854aff466c1f67c3a38ac7b06d8#npm:2.27.5"],\
