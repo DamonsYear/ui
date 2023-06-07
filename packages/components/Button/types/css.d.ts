@@ -27,7 +27,7 @@ declare type CSSProps = {
   alignSelf?: string;
   justifySelf?: string;
 
-  postion?: string;
+  position?: string;
   top?: string;
   right?: string;
   bottom?: string;
@@ -66,7 +66,7 @@ declare type CSSProps = {
   fontSize?: string;
 
   transform?: string;
-  transtion?: string;
+  transition?: string;
 };
 
 declare type StyledComponentCSSProps = {
@@ -82,7 +82,7 @@ declare type StyledComponentCSSProps = {
   $alignSelf?: string;
   $justifySelf?: string;
 
-  $postion?: string;
+  $position?: string;
   $top?: string;
   $right?: string;
   $bottom?: string;
@@ -121,5 +121,5 @@ declare type StyledComponentCSSProps = {
   $fontSize?: string;
 
   $transform?: string;
-  $transtion?: string;
+  $transition?: string;
 };

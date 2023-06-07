@@ -19,7 +19,7 @@ export function Button({
   alignSelf,
   justifySelf,
 
-  postion,
+  position,
   top,
   right,
   bottom,
@@ -58,7 +58,7 @@ export function Button({
   fontSize,
 
   transform,
-  transtion,
+  transition,
 }: TButton) {
   return (
     <Button.Style
@@ -70,7 +70,7 @@ export function Button({
       $alignItems={alignItems}
       $alignSelf={alignSelf}
       $justifySelf={justifySelf}
-      $postion={postion}
+      $position={position}
       $top={top}
       $right={right}
       $bottom={bottom}
@@ -101,7 +101,7 @@ export function Button({
       $color={color}
       $fontSize={fontSize}
       $transform={transform}
-      $transtion={transtion}
+      $transition={transition}
     >
       {children}
     </Button.Style>
