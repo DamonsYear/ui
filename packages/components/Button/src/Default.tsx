@@ -192,13 +192,75 @@ const baseCSS = () => css<CSSProps>`
 Button.Style = styled.button<CSSProps>`
   ${baseCSS}
 
-  ${(props) => props._before && baseCSS}
-  ${(props) => props._after && baseCSS}
-  ${(props) => props._active && baseCSS}
-  ${(props) => props._disabled && baseCSS}
-  ${(props) => props._enabled && baseCSS}
-  ${(props) => props._focus && baseCSS}
-  ${(props) => props._hover && baseCSS}
-  ${(props) => props._firstOfType && baseCSS}
-  ${(props) => props._lastOfType && baseCSS}
+  ${(props) =>
+    props._before &&
+    css`
+      &::before {
+        ${baseCSS}
+      }
+    `}
+
+  ${(props) =>
+    props._after &&
+    css`
+      &::after {
+        ${baseCSS}
+      }
+    `}
+
+  ${(props) =>
+    props._active &&
+    css`
+      &:active {
+        ${baseCSS}
+      }
+    `}
+
+  ${(props) =>
+    props._disabled &&
+    css`
+      &:disabled {
+        ${baseCSS}
+      }
+    `}
+
+  ${(props) =>
+    props._enabled &&
+    css`
+      &:enabled {
+        ${baseCSS}
+      }
+    `}
+
+  ${(props) =>
+    props._focus &&
+    css`
+      &:focus {
+        ${baseCSS}
+      }
+    `}
+
+  ${(props) =>
+    props._hover &&
+    css`
+      &:hover {
+        ${baseCSS}
+      }
+    `}
+
+  ${(props) =>
+    props._firstOfType &&
+    css`
+      &:first-of-type {
+        ${baseCSS}
+      }
+    `}
+    
+  ${(props) =>
+    props._lastOfType &&
+    css`
+      &:last-of-type {
+        ${baseCSS}
+      }
+    `}
 `;
