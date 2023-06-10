@@ -6,8 +6,6 @@ export type PseudosPropKey =
   | "_backdrop"
   | "_placeholder"
   | "_active"
-  | "_after"
-  | "_before"
   | "_checked"
   | "_default"
   | "_defined"

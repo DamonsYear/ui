@@ -1,7 +1,7 @@
 {
   "name": "@damons-ui/react-core",
   "version": "0.0.0",
-  "main": "./index.tsx",
+  "main": "./src/index.ts",
   "types": "./dist/index.d.ts",
   "license": "MIT",
   "scripts": {
