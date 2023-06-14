@@ -5,7 +5,8 @@
     "apps/*",
     "packages/*",
     "packages/components/*",
-    "packages/core/*"
+    "packages/core/*",
+    "packages/hooks/*"
   ],
   "private": true,
   "scripts": {
