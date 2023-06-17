@@ -668,6 +668,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@damons-ui/react-hooks@workspace:packages/hooks/react"
   dependencies:
+    "@tanstack/react-query": ^4.29.14
     "@types/react": ^18.2.0
     "@types/react-dom": ^18.2.0
     "@typescript-eslint/eslint-plugin": ^5.59.8
@@ -677,6 +678,7 @@ __metadata:
     eslint-plugin-import: ^2.27.5
     eslint-plugin-react: ^7.32.2
     eslint-plugin-turbo: latest
+    fast-deep-equal: ^3.1.3
     prettier-config-custom: "*"
     react: ^18.2.0
     tsconfig: "workspace:^"
@@ -1034,6 +1036,32 @@ __metadata:
   dependencies:
     tslib: ^2.4.0
   checksum: 71e0e27234590435e4c62b97ef5e796f88e786841a38c7116a5e27a3eafa7b9ead7cdec5249b32165902076de78446945311c973e59bddf77c1e24f33a8f272a
+  languageName: node
+  linkType: hard
+
+"@tanstack/query-core@npm:4.29.14":
+  version: 4.29.14
+  resolution: "@tanstack/query-core@npm:4.29.14"
+  checksum: 3f74b2a02a7ac3b5d5f01507dc5ed15af539257005fc299ae4e4ef578feb347ab737ed5beb542c809c8f2838ae4d8626f6bf5d7d134173e0b8504c0900d0d9f6
+  languageName: node
+  linkType: hard
+
+"@tanstack/react-query@npm:^4.29.14":
+  version: 4.29.14
+  resolution: "@tanstack/react-query@npm:4.29.14"
+  dependencies:
+    "@tanstack/query-core": 4.29.14
+    use-sync-external-store: ^1.2.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-native: "*"
+  peerDependenciesMeta:
+    react-dom:
+      optional: true
+    react-native:
+      optional: true
+  checksum: 2444cd11dbbb9e6811e845505bd55d0f4b63f39f6067f5b3a65b18ed66d945128d84988df3b7aaae7adc5636fd0909af86bbc184b6101d395136f8bd14509593
   languageName: node
   linkType: hard
 
@@ -6757,6 +6785,15 @@ __metadata:
   dependencies:
     punycode: ^2.1.0
   checksum: 7167432de6817fe8e9e0c9684f1d2de2bb688c94388f7569f7dbdb1587c9f4ca2a77962f134ec90be0cc4d004c939ff0d05acc9f34a0db39a3c797dada262633
+  languageName: node
+  linkType: hard
+
+"use-sync-external-store@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "use-sync-external-store@npm:1.2.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 5c639e0f8da3521d605f59ce5be9e094ca772bd44a4ce7322b055a6f58eeed8dda3c94cabd90c7a41fb6fa852210092008afe48f7038792fd47501f33299116a
   languageName: node
   linkType: hard
 
