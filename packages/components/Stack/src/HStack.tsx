@@ -7,7 +7,7 @@ import { TStack, TStyledStack } from "./types";
  * @description
  * [x] spacing: 컴포넌트 간의 세로 간격을 조정한다.
  */
-export function VStack({
+export function HStack({
   children,
 
   spacing,
@@ -76,7 +76,7 @@ export function VStack({
   _lastOfType,
 }: TStack) {
   return (
-    <VStack.Style
+    <HStack.Style
       spacing={spacing}
       boxSizing={boxSizing}
       zIndex={zIndex}
@@ -129,7 +129,7 @@ export function VStack({
       _lastOfType={_lastOfType}
     >
       {children}
-    </VStack.Style>
+    </HStack.Style>
   );
 }
 
@@ -195,7 +195,7 @@ const baseCSS = () => css<CSSProps>`
   visibility: ${(props) => props.visibility};
 `;
 
-VStack.Style = styled.button<TStyledStack>`
+HStack.Style = styled.button<TStyledStack>`
   ${baseCSS}
 
   ${(props) =>
@@ -272,7 +272,7 @@ VStack.Style = styled.button<TStyledStack>`
 
   * {
     &:not(:last-of-type) {
-      margin-bottom: ${(props) => props.spacing};
+      margin-right: ${(props) => props.spacing};
     }
   }
 `;
