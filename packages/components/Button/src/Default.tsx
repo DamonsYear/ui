@@ -1,8 +1,7 @@
-import React, { PropsWithChildren } from "react";
+import React from "react";
 import styled, { css } from "css-in-js";
 import { CSSProps, baseCSS } from "@damons-ui/react-core";
-
-type TButton = CSSProps & PropsWithChildren;
+import { TButton } from "./types";
 
 export function Button({
   children,
