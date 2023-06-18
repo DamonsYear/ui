@@ -133,7 +133,7 @@ export function HStack({
   );
 }
 
-HStack.Style = styled.button<TStyledStack>`
+HStack.Style = styled.div<TStyledStack>`
   ${baseCSS}
 
   ${(props) =>

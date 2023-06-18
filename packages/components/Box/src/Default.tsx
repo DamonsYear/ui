@@ -1,10 +1,9 @@
-import React, { PropsWithChildren } from "react";
+import React from "react";
 import styled, { css } from "css-in-js";
 import { CSSProps, baseCSS } from "@damons-ui/react-core";
+import { TBox } from "./types";
 
-type TBox = CSSProps & PropsWithChildren;
-
-export function Box({
+export default function Box({
   children,
 
   boxSizing,
@@ -127,7 +126,7 @@ export function Box({
   );
 }
 
-Box.Style = styled.button<CSSProps>`
+Box.Style = styled.div<CSSProps>`
   ${baseCSS}
 
   ${(props) =>

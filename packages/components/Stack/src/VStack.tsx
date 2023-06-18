@@ -133,7 +133,7 @@ export function VStack({
   );
 }
 
-VStack.Style = styled.button<TStyledStack>`
+VStack.Style = styled.div<TStyledStack>`
   ${baseCSS}
 
   ${(props) =>

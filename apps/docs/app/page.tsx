@@ -1,10 +1,6 @@
-import { Button, Header } from "ui";
+"use client";
+import Box from "@damons-ui/box";
 
 export default function Page() {
-  return (
-    <>
-      <Header text="Docs" />
-      <Button />
-    </>
-  );
+  return <Box>hi</Box>;
 }

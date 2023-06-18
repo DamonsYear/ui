@@ -9,16 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@damons-ui/box": "workspace:^",
     "@damons-ui/button": "workspace:^",
+    "@damons-ui/stack": "workspace:^",
     "next": "^13.4.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.0.0-rc.3"
   },
   "devDependencies": {
     "@types/node": "^17.0.12",
     "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.7",
+    "@types/styled-components": "^5.1.26",
     "eslint-config-custom": "*",
+    "eslint-plugin-turbo": "^1.10.3",
     "tsconfig": "*",
     "typescript": "^4.5.3"
   }
