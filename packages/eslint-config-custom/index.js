@@ -22,6 +22,7 @@ module.exports = {
     ],
     "import/prefer-default-export": "off",
     "require-jsdoc": "off",
+    "valid-jsdoc": "off",
   },
   ignorePatterns: ["**/lib/**/*", "**/dist/**/*"],
 };
