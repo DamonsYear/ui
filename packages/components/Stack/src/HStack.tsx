@@ -17,7 +17,7 @@ export function HStack({
   zIndex,
 
   display = "flex",
-  flexDirection = "column",
+  flexDirection = "row",
   justifyContent,
   alignItems,
 
