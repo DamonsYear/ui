@@ -32,6 +32,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:packages/components/Button"\
       },\
       {\
+        "name": "@damons-ui/checkbox",\
+        "reference": "workspace:packages/components/Checkbox"\
+      },\
+      {\
         "name": "@damons-ui/stack",\
         "reference": "workspace:packages/components/Stack"\
       },\
@@ -65,6 +69,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "fallbackExclusionList": [\
       ["@damons-ui/box", ["workspace:packages/components/Box"]],\
       ["@damons-ui/button", ["workspace:packages/components/Button"]],\
+      ["@damons-ui/checkbox", ["workspace:packages/components/Checkbox"]],\
       ["@damons-ui/react-core", ["workspace:packages/core/react"]],\
       ["@damons-ui/react-hooks", ["workspace:packages/hooks/react"]],\
       ["@damons-ui/stack", ["workspace:packages/components/Stack"]],\
@@ -3383,6 +3388,29 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/components/Button/",\
           "packageDependencies": [\
             ["@damons-ui/button", "workspace:packages/components/Button"],\
+            ["@damons-ui/react-core", "workspace:packages/core/react"],\
+            ["@types/react", "npm:18.2.7"],\
+            ["@types/react-dom", "npm:18.2.4"],\
+            ["@typescript-eslint/eslint-plugin", "virtual:96fa76d92eedff6af588f029a7f8613f1592daef1b44dbd39ade9b8d981aeed3e90feea0b9601d361960f86f381889a69c64fdbb94b8095f910962897edc2245#npm:5.59.8"],\
+            ["css-in-js", "workspace:packages/css-in-js"],\
+            ["eslint", "npm:7.32.0"],\
+            ["eslint-config-custom", "workspace:packages/eslint-config-custom"],\
+            ["eslint-plugin-import", "virtual:96fa76d92eedff6af588f029a7f8613f1592daef1b44dbd39ade9b8d981aeed3e90feea0b9601d361960f86f381889a69c64fdbb94b8095f910962897edc2245#npm:2.27.5"],\
+            ["eslint-plugin-react", "virtual:96fa76d92eedff6af588f029a7f8613f1592daef1b44dbd39ade9b8d981aeed3e90feea0b9601d361960f86f381889a69c64fdbb94b8095f910962897edc2245#npm:7.32.2"],\
+            ["eslint-plugin-turbo", "virtual:96fa76d92eedff6af588f029a7f8613f1592daef1b44dbd39ade9b8d981aeed3e90feea0b9601d361960f86f381889a69c64fdbb94b8095f910962897edc2245#npm:1.10.1"],\
+            ["prettier-config-custom", "workspace:packages/prettier-config-custom"],\
+            ["react", "npm:17.0.2"],\
+            ["tsconfig", "workspace:packages/tsconfig"],\
+            ["typescript", "patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=b5f058"]\
+          ],\
+          "linkType": "SOFT"\
+        }]\
+      ]],\
+      ["@damons-ui/checkbox", [\
+        ["workspace:packages/components/Checkbox", {\
+          "packageLocation": "./packages/components/Checkbox/",\
+          "packageDependencies": [\
+            ["@damons-ui/checkbox", "workspace:packages/components/Checkbox"],\
             ["@damons-ui/react-core", "workspace:packages/core/react"],\
             ["@types/react", "npm:18.2.7"],\
             ["@types/react-dom", "npm:18.2.4"],\
