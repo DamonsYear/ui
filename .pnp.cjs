@@ -3411,6 +3411,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/components/Checkbox/",\
           "packageDependencies": [\
             ["@damons-ui/checkbox", "workspace:packages/components/Checkbox"],\
+            ["@damons-ui/box", "workspace:packages/components/Box"],\
             ["@damons-ui/react-core", "workspace:packages/core/react"],\
             ["@types/react", "npm:18.2.7"],\
             ["@types/react-dom", "npm:18.2.4"],\
