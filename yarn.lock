@@ -2167,7 +2167,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@damons-ui/checkbox@workspace:packages/components/Checkbox":
+"@damons-ui/checkbox@workspace:^, @damons-ui/checkbox@workspace:packages/components/Checkbox":
   version: 0.0.0-use.local
   resolution: "@damons-ui/checkbox@workspace:packages/components/Checkbox"
   dependencies:
@@ -4473,6 +4473,7 @@ __metadata:
   dependencies:
     "@damons-ui/box": "workspace:^"
     "@damons-ui/button": "workspace:^"
+    "@damons-ui/checkbox": "workspace:^"
     "@damons-ui/stack": "workspace:^"
     "@types/node": ^17.0.12
     "@types/react": ^18.0.22

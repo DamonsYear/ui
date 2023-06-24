@@ -11,6 +11,7 @@
   "dependencies": {
     "@damons-ui/box": "workspace:^",
     "@damons-ui/button": "workspace:^",
+    "@damons-ui/checkbox": "workspace:^",
     "@damons-ui/stack": "workspace:^",
     "next": "^13.4.1",
     "react": "^18.2.0",
