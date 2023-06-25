@@ -1,18 +1,28 @@
 import { CSSProps } from "@damons-ui/react-core";
 import { PropsWithChildren } from "react";
 
-export type TCheckBoxState = {
-  checked: boolean;
-  onChange: (value: boolean, e: Event) => void;
+export type PropsWithId = {
+  id: string;
 };
+
+export type TCheckBoxBaseProps = {
+  checked: boolean;
+
+  activeBackground: CSSProps["background"];
+  defaultBackground: CSSProps["background"];
+};
+
+export type TCheckBoxState = {
+  onChange: (value: boolean, e?: React.ChangeEvent<HTMLInputElement>) => void;
+} & TCheckBoxBaseProps;
 
 export type TCheckBoxInner = {
-  checked: boolean;
+  checked?: TCheckBoxBaseProps["checked"];
 };
 
-export type TCheckBoxContainer = {
-  checked: boolean;
-  onClick: (e: Event) => void;
-} & PropsWithChildren;
+export type TCheckBoxContainer = TCheckBoxBaseProps & PropsWithChildren;
 
-export type TCheckbox = TCheckBoxState & CSSProps & PropsWithChildren;
+export type TCheckbox = TCheckBoxState &
+  CSSProps &
+  PropsWithId &
+  PropsWithChildren;
