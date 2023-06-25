@@ -4,6 +4,8 @@ import { CSSProps, baseCSS } from "@damons-ui/react-core";
 import { TBox } from "./types";
 
 export default function Box({
+  onClick,
+
   children,
 
   boxSizing,
@@ -71,6 +73,7 @@ export default function Box({
 }: TBox) {
   return (
     <Box.Style
+      onClick={onClick}
       boxSizing={boxSizing}
       zIndex={zIndex}
       display={display}
