@@ -1,12 +1,16 @@
 import React from "react";
-import styled, { css } from "css-in-js";
-import { CSSProps, baseCSS } from "@damons-ui/react-core";
-import Box from "@damons-ui/box";
+
 import { TCheckBoxContainer, TCheckBoxInner, TCheckbox } from "./types";
+import * as S from "./Default.style";
 
 export function CheckBox({
+  id,
+
   checked,
   onChange,
+
+  activeBackground,
+  defaultBackground,
 
   children,
 
@@ -73,12 +77,12 @@ export function CheckBox({
   _hover,
   _lastOfType,
 }: TCheckbox) {
-  const onChangeCheckBox = (e: Event) => {
-    onChange(!checked, e);
+  const onChangeInput = () => {
+    onChange(!checked);
   };
 
   return (
-    <CheckBox.Label
+    <S.Label
       boxSizing={boxSizing}
       zIndex={zIndex}
       display={display}
@@ -128,219 +132,51 @@ export function CheckBox({
       _focus={_focus}
       _hover={_hover}
       _lastOfType={_lastOfType}
+      htmlFor={id}
     >
-      <CheckBox.Container checked={checked} onClick={onChangeCheckBox}>
+      <CheckBox.Container
+        checked={checked}
+        activeBackground={activeBackground}
+        defaultBackground={defaultBackground}
+      >
         <CheckBox.Inner checked={checked} />
-        {children}
       </CheckBox.Container>
+      {children}
 
-      <CheckBox.Style
+      <S.Input
+        id={id}
         type="checkbox"
-        position="absolute"
-        visibility="hidden"
-        width="1px"
-        height="1px"
+        // position="absolute"
+        // visibility="hidden"
+        width="10px"
+        height="10px"
         margin="-1px"
         checked={checked}
+        onChange={onChangeInput}
       />
-    </CheckBox.Label>
+    </S.Label>
   );
 }
 
-CheckBox.Label = styled.label<CSSProps>`
-  position: relative;
-
-  display: block;
-
-  ${baseCSS}
-
-  ${(props) =>
-    props._before &&
-    css`
-      &::before {
-        ${baseCSS}
-      }
-    `}
-
-  ${(props) =>
-    props._after &&
-    css`
-      &::after {
-        ${baseCSS}
-      }
-    `}
-
-  ${(props) =>
-    props._active &&
-    css`
-      &:active {
-        ${baseCSS}
-      }
-    `}
-
-  ${(props) =>
-    props._disabled &&
-    css`
-      &:disabled {
-        ${baseCSS}
-      }
-    `}
-
-  ${(props) =>
-    props._enabled &&
-    css`
-      &:enabled {
-        ${baseCSS}
-      }
-    `}
-
-  ${(props) =>
-    props._focus &&
-    css`
-      &:focus {
-        ${baseCSS}
-      }
-    `}
-
-  ${(props) =>
-    props._hover &&
-    css`
-      &:hover {
-        ${baseCSS}
-      }
-    `}
-
-  ${(props) =>
-    props._firstOfType &&
-    css`
-      &:first-of-type {
-        ${baseCSS}
-      }
-    `}
-    
-  ${(props) =>
-    props._lastOfType &&
-    css`
-      &:last-of-type {
-        ${baseCSS}
-      }
-    `}
-`;
-
-CheckBox.Style = styled.input<CSSProps>`
-  ${baseCSS}
-
-  ${(props) =>
-    props._before &&
-    css`
-      &::before {
-        ${baseCSS}
-      }
-    `}
-
-  ${(props) =>
-    props._after &&
-    css`
-      &::after {
-        ${baseCSS}
-      }
-    `}
-
-  ${(props) =>
-    props._active &&
-    css`
-      &:active {
-        ${baseCSS}
-      }
-    `}
-
-  ${(props) =>
-    props._disabled &&
-    css`
-      &:disabled {
-        ${baseCSS}
-      }
-    `}
-
-  ${(props) =>
-    props._enabled &&
-    css`
-      &:enabled {
-        ${baseCSS}
-      }
-    `}
-
-  ${(props) =>
-    props._focus &&
-    css`
-      &:focus {
-        ${baseCSS}
-      }
-    `}
-
-  ${(props) =>
-    props._hover &&
-    css`
-      &:hover {
-        ${baseCSS}
-      }
-    `}
-
-  ${(props) =>
-    props._firstOfType &&
-    css`
-      &:first-of-type {
-        ${baseCSS}
-      }
-    `}
-    
-  ${(props) =>
-    props._lastOfType &&
-    css`
-      &:last-of-type {
-        ${baseCSS}
-      }
-    `}
-`;
-
-CheckBox.ContainerStyle = styled(Box)<TCheckBoxContainer>`
-  background-color: ${(props) => (props.checked ? "#ffffff" : "#752bed")};
-`;
-
 CheckBox.Container = function Container({
   checked,
-  onClick,
   children,
+  activeBackground,
+  defaultBackground,
 }: TCheckBoxContainer) {
   return (
-    <CheckBox.ContainerStyle
+    <S.Container
       width="40px"
       height="40px"
+      border="1px solid #ddd"
       borderRadius="4px"
-      background="#752bed"
-      checked={checked}
-      onClick={onClick}
+      background={checked ? activeBackground : defaultBackground}
+      transition="all 0.1s"
     >
       {children}
-    </CheckBox.ContainerStyle>
+    </S.Container>
   );
 };
-
-const BaseLine = styled.polyline<TCheckBoxInner>`
-  fill: none;
-  stroke: #ffffff;
-  stroke-width: 4px;
-  stroke-miterlimit: 10;
-  stroke-dashoffset: 0;
-  stroke-dasharray: 60;
-  transition: all 0.3s;
-
-  ${(props) =>
-    !props.checked &&
-    css`
-      stroke-dashoffset: 0;
-    `}
-`;
 
 CheckBox.Inner = function Inner({ checked }: TCheckBoxInner) {
   return (
@@ -351,7 +187,13 @@ CheckBox.Inner = function Inner({ checked }: TCheckBoxInner) {
       version="1.1"
       viewBox="0 0 40 40"
     >
-      <BaseLine points="8 18 18 28 32 12" checked={checked} />
+      <S.BaseLine
+        fill="none"
+        stroke="#fff"
+        strokeWidth="4px"
+        checked={checked}
+        points="8 18 18 28 32 12"
+      />
     </svg>
   );
 };
