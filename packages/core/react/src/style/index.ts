@@ -32,3 +32,4 @@ export type ComponentPseudoCSS = ComponentBaseCSS & {
 };
 
 export type CSSProps = ComponentBaseCSS & ComponentPseudoCSS;
+export type CSSPseudos = CSS.Pseudos;
