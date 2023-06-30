@@ -1,5 +1,5 @@
 import { css } from "css-in-js";
-import { CSSProps } from ".";
+import { CSSProps } from "./types";
 
 export const baseCSS = (props: CSSProps) => css<CSSProps>`
   box-sizing: ${props.boxSizing};
