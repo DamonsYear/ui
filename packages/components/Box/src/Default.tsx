@@ -132,7 +132,6 @@ export default function Box({
 Box.Style = styled.div<CSSProps>`
   ${(props) => baseCSS(props)}
 
-  ${(props) => props._disabled && pseudoCSS(props._disabled, ":disabled")}
   ${(props) => props._hover && pseudoCSS(props._hover, ":hover")}
   ${(props) => props._before && pseudoCSS(props._before, ":before")}
   ${(props) => props._after && pseudoCSS(props._after, ":after")}
