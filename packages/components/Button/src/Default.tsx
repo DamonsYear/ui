@@ -127,8 +127,6 @@ export function Button({
 }
 
 Button.Style = styled.button<CSSProps>`
-  ${baseCSS}
-
   ${(props) => baseCSS(props)}
 
   ${(props) => props._disabled && pseudoCSS(props._disabled, ":disabled")}
