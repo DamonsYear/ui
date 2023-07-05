@@ -1,15 +1,18 @@
 import { CSSProps } from "@damons-ui/react-core";
-import { PropsWithChildren } from "react";
+import React, { PropsWithChildren } from "react";
 
 export type PropsWithId = {
   id: string;
 };
 
+type TIntrinsicTranslate = "yes" | "no" | undefined;
 export type TCheckBoxBaseProps = {
   checked: boolean;
 
   activeBackground: CSSProps["background"];
   defaultBackground: CSSProps["background"];
+
+  translate?: TIntrinsicTranslate & CSSProps["translate"];
 };
 
 export type TCheckBoxState = {

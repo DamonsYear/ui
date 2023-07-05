@@ -76,6 +76,8 @@ export function CheckBox({
   _focus,
   _hover,
   _lastOfType,
+
+  ...rest
 }: TCheckbox) {
   const onChangeInput = () => {
     onChange(!checked);
@@ -83,6 +85,7 @@ export function CheckBox({
 
   return (
     <S.Label
+      {...rest}
       boxSizing={boxSizing}
       zIndex={zIndex}
       display={display}
