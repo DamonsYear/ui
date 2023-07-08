@@ -14,69 +14,6 @@ export function CheckBox({
 
   children,
 
-  boxSizing,
-
-  zIndex,
-
-  display,
-  flexDirection,
-  justifyContent,
-  alignItems,
-
-  alignSelf,
-  justifySelf,
-
-  position,
-  top,
-  right,
-  bottom,
-  left,
-
-  width,
-  maxWidth,
-  minWidth,
-
-  height,
-  maxHeight,
-  minHeight,
-
-  margin,
-  marginTop,
-  marginRight,
-  marginBottom,
-  marginLeft,
-
-  padding,
-  paddingTop,
-  paddingRight,
-  paddingBottom,
-  paddingLeft,
-
-  background,
-  backgroundColor,
-
-  border,
-  borderWidth,
-  borderStyle,
-  borderRadius,
-
-  lineHeight,
-  color,
-  fontSize,
-
-  transform,
-  transition,
-
-  _after,
-  _before,
-  _active,
-  _disabled,
-  _enabled,
-  _firstOfType,
-  _focus,
-  _hover,
-  _lastOfType,
-
   ...rest
 }: TCheckbox) {
   const onChangeInput = () => {
@@ -84,59 +21,7 @@ export function CheckBox({
   };
 
   return (
-    <S.Label
-      {...rest}
-      boxSizing={boxSizing}
-      zIndex={zIndex}
-      display={display}
-      flexDirection={flexDirection}
-      justifyContent={justifyContent}
-      alignItems={alignItems}
-      alignSelf={alignSelf}
-      justifySelf={justifySelf}
-      position={position}
-      top={top}
-      right={right}
-      bottom={bottom}
-      left={left}
-      width={width}
-      maxWidth={maxWidth}
-      minWidth={minWidth}
-      height={height}
-      maxHeight={maxHeight}
-      minHeight={minHeight}
-      margin={margin}
-      marginTop={marginTop}
-      marginRight={marginRight}
-      marginBottom={marginBottom}
-      marginLeft={marginLeft}
-      padding={padding}
-      paddingTop={paddingTop}
-      paddingRight={paddingRight}
-      paddingBottom={paddingBottom}
-      paddingLeft={paddingLeft}
-      background={background}
-      backgroundColor={backgroundColor}
-      border={border}
-      borderWidth={borderWidth}
-      borderStyle={borderStyle}
-      borderRadius={borderRadius}
-      lineHeight={lineHeight}
-      color={color}
-      fontSize={fontSize}
-      transform={transform}
-      transition={transition}
-      _after={_after}
-      _before={_before}
-      _active={_active}
-      _disabled={_disabled}
-      _enabled={_enabled}
-      _firstOfType={_firstOfType}
-      _focus={_focus}
-      _hover={_hover}
-      _lastOfType={_lastOfType}
-      htmlFor={id}
-    >
+    <S.Label htmlFor={id} {...rest}>
       <CheckBox.Container
         checked={checked}
         activeBackground={activeBackground}
@@ -149,8 +34,6 @@ export function CheckBox({
       <S.Input
         id={id}
         type="checkbox"
-        // position="absolute"
-        // visibility="hidden"
         width="10px"
         height="10px"
         margin="-1px"
