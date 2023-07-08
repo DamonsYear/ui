@@ -3444,6 +3444,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@damons-ui/react-core", "workspace:packages/core/react"],\
             ["@types/react", "npm:18.2.7"],\
             ["@types/react-dom", "npm:18.2.4"],\
+            ["@types/uuid", "npm:9.0.2"],\
             ["@typescript-eslint/eslint-plugin", "virtual:96fa76d92eedff6af588f029a7f8613f1592daef1b44dbd39ade9b8d981aeed3e90feea0b9601d361960f86f381889a69c64fdbb94b8095f910962897edc2245#npm:5.59.8"],\
             ["css-in-js", "workspace:packages/css-in-js"],\
             ["eslint", "npm:7.32.0"],\
@@ -3454,7 +3455,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prettier-config-custom", "workspace:packages/prettier-config-custom"],\
             ["react", "npm:17.0.2"],\
             ["tsconfig", "workspace:packages/tsconfig"],\
-            ["typescript", "patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=b5f058"]\
+            ["typescript", "patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=b5f058"],\
+            ["uuid", "npm:9.0.0"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -4264,6 +4266,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/hoist-non-react-statics", "npm:3.3.1"],\
             ["@types/react", "npm:18.2.7"],\
             ["csstype", "npm:3.1.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/uuid", [\
+        ["npm:9.0.2", {\
+          "packageLocation": "./.yarn/cache/@types-uuid-npm-9.0.2-f2a5f65979-1754bcf344.zip/node_modules/@types/uuid/",\
+          "packageDependencies": [\
+            ["@types/uuid", "npm:9.0.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -12270,6 +12281,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/util-deprecate-npm-1.0.2-e3fe1a219c-474acf1146.zip/node_modules/util-deprecate/",\
           "packageDependencies": [\
             ["util-deprecate", "npm:1.0.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["uuid", [\
+        ["npm:9.0.0", {\
+          "packageLocation": "./.yarn/cache/uuid-npm-9.0.0-46c41e3e43-8dd2c83c43.zip/node_modules/uuid/",\
+          "packageDependencies": [\
+            ["uuid", "npm:9.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\
