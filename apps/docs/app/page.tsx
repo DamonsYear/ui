@@ -1,35 +1,33 @@
 "use client";
 import Box from "@damons-ui/box";
-import { Button } from "@damons-ui/button";
-import { CheckBox } from "@damons-ui/checkbox";
-import { HStack, VStack } from "@damons-ui/stack";
-import { useState } from "react";
+import { Descriptions } from "../Descriptions";
 
 export default function Page() {
-  const [checked, setChecked] = useState(true);
-  const onChange = (value: boolean) => {
-    setChecked(value);
-  };
-
   return (
     <Box>
-      <CheckBox
-        id="test"
-        checked={checked}
-        onChange={onChange}
-        activeBackground="#752bed"
-        defaultBackground="white"
-      >
-        CheckBox Click!
-      </CheckBox>
-      <VStack spacing="10px">
-        <Button>안녕하세요!</Button>
-        <Button>반가워요!</Button>
-      </VStack>
-      <HStack spacing="10px" marginTop="20px">
-        <Button>안녕하세요!</Button>
-        <Button>반가워요!</Button>
-      </HStack>
+      <Descriptions.Container layout="horizontal">
+        <Descriptions.Item label="담당자 1" gridWidth={1}>
+          황재영
+        </Descriptions.Item>
+        <Descriptions.Item label="담당자 2" gridWidth={2}>
+          황재영
+        </Descriptions.Item>
+        <Descriptions.Item label="담당자 3" gridWidth={3}>
+          황재영
+        </Descriptions.Item>
+        <Descriptions.Item label="담당자 4" gridWidth={4}>
+          황재영
+        </Descriptions.Item>
+        <Descriptions.Item label="담당자 5" gridWidth={5}>
+          황재영
+        </Descriptions.Item>
+        <Descriptions.Item label="담당자 6" gridWidth={6}>
+          황재영
+        </Descriptions.Item>
+        <Descriptions.Item label="담당자 7" gridWidth={1222}>
+          황재영
+        </Descriptions.Item>
+      </Descriptions.Container>
     </Box>
   );
 }
