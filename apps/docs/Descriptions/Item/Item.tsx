@@ -3,7 +3,13 @@ import { TItemProps } from "./types";
 
 import * as S from "./Item.styles";
 
-export const Item = ({ label, children, gridWidth = 3 }: TItemProps) => {
+export const Item = ({
+  label,
+  children,
+  gridWidth = 3,
+  labelHeight,
+  contentHeight,
+}: TItemProps) => {
   const { descriptionsState } = useDescriptions();
 
   return (
@@ -11,8 +17,8 @@ export const Item = ({ label, children, gridWidth = 3 }: TItemProps) => {
       layout={descriptionsState.layout}
       gridWidth={gridWidth / descriptionsState.gridWidth}
     >
-      <header>{label}</header>
-      <div>{children}</div>
+      <S.Label height={labelHeight}>{label}</S.Label>
+      <S.Content height={contentHeight}>{children}</S.Content>
     </S.ItemContainer>
   );
 };
