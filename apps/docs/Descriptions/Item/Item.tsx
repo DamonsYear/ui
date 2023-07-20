@@ -12,6 +12,8 @@ export const Item = ({
 }: TItemProps) => {
   const { descriptionsState } = useDescriptions();
 
+  console.log(descriptionsState);
+
   return (
     <S.ItemContainer
       layout={descriptionsState.layout}

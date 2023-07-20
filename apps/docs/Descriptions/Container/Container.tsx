@@ -7,6 +7,7 @@ export const Container = ({ layout, children }: TContainerProps) => {
   const { setDescriptionsState } = useDescriptions();
 
   useEffect(() => {
+    console.log(layout);
     setDescriptionsState((state) => ({
       ...state,
       layout,
