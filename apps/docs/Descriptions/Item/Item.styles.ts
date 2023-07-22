@@ -4,13 +4,13 @@ import { CSSProps } from "@damons-ui/react-core";
 
 export type TItemContainerProps = {
   layout: TInitialDescriptionsState["layout"];
-  gridWidth: TInitialDescriptionsState["gridWidth"];
+  unit: TInitialDescriptionsState["unit"];
 } & CSSProps;
 
 export const ItemContainer = styled.section<TItemContainerProps>`
   box-sizing: border-box;
   display: ${(props) => (props.layout === "horizontal" ? "flex" : "block")};
-  width: calc(100% * ${(props) => props.gridWidth});
+  width: calc(100% * ${(props) => props.unit});
   /* border-right: 1px solid lightgray; */
   border-bottom: 1px solid ${(props) => props.borderColor};
 `;

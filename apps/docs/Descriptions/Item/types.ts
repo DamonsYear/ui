@@ -12,5 +12,5 @@ export type TItemProps = {
   labelHeight?: TItemLabelProps["height"];
   contentHeight?: TItemContentProps["height"];
   borderColor?: CSSProps["borderColor"];
-} & Pick<TItemContainerProps, "gridWidth"> &
+} & Pick<TItemContainerProps, "unit"> &
   PropsWithChildren;

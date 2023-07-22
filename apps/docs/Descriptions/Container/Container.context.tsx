@@ -9,12 +9,12 @@ import { TContainerProps } from "./types";
 
 export type TInitialDescriptionsState = {
   layout: "vertical" | "horizontal";
-  gridWidth: number;
+  unit: number;
 };
 
 export const initialState: TInitialDescriptionsState = {
   layout: "horizontal",
-  gridWidth: 12,
+  unit: 12,
 };
 
 export type TDescriptionsContext = {

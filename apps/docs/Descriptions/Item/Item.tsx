@@ -7,7 +7,7 @@ import { useDamonsUITheme } from "@damons-ui/react-core";
 export const Item = ({
   label,
   children,
-  gridWidth = 3,
+  unit = 3,
   labelHeight,
   contentHeight,
   borderColor,
@@ -19,7 +19,7 @@ export const Item = ({
     <S.ItemContainer
       borderColor={borderColor ?? theme.descriptions.item.borderColor}
       layout={descriptionsState.layout}
-      gridWidth={gridWidth / descriptionsState.gridWidth}
+      unit={unit / descriptionsState.unit}
     >
       <S.Label
         layout={descriptionsState.layout}
