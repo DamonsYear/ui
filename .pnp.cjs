@@ -6470,6 +6470,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@damons-ui/box", "workspace:packages/components/Box"],\
             ["@damons-ui/button", "workspace:packages/components/Button"],\
             ["@damons-ui/checkbox", "workspace:packages/components/Checkbox"],\
+            ["@damons-ui/react-core", "workspace:packages/core/react"],\
             ["@damons-ui/stack", "workspace:packages/components/Stack"],\
             ["@types/node", "npm:17.0.45"],\
             ["@types/react", "npm:18.2.7"],\

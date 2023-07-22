@@ -4528,6 +4528,7 @@ __metadata:
     "@damons-ui/box": "workspace:^"
     "@damons-ui/button": "workspace:^"
     "@damons-ui/checkbox": "workspace:^"
+    "@damons-ui/react-core": "workspace:^"
     "@damons-ui/stack": "workspace:^"
     "@types/node": ^17.0.12
     "@types/react": ^18.0.22

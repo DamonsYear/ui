@@ -4,8 +4,8 @@ export type TStyledTbodyProps = {
   layout: "vertical" | "horizontal";
 };
 export const Container = styled.article`
-  border-top: 1px solid lightgray;
-  border-left: 1px solid lightgray;
+  border-top: 1px solid gray;
+  border-left: 1px solid gray;
 `;
 
 export const VerticalBody = styled.div`
