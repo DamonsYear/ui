@@ -24,13 +24,13 @@ export const Item = ({
       <S.Label
         layout={descriptionsState.layout}
         height={labelHeight}
-        borderColor={borderColor ?? theme.descriptions.item.borderColor}
+        borderColor={borderColor ?? theme.descriptions.label.borderColor}
       >
         {label}
       </S.Label>
       <S.Content
         height={contentHeight}
-        borderColor={borderColor ?? theme.descriptions.item.borderColor}
+        borderColor={borderColor ?? theme.descriptions.content.borderColor}
       >
         {children}
       </S.Content>

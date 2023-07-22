@@ -17,6 +17,8 @@ type ThemeState = {
     row: CSSProps;
     col: CSSProps;
     item: CSSProps;
+    label: CSSProps;
+    content: CSSProps;
   };
 };
 
@@ -29,6 +31,14 @@ const initialThemeState = {
     row: { ...Descriptions },
     col: { ...Descriptions },
     item: { ...Descriptions },
+    label: {
+      ...Descriptions,
+      backgroundColor: "#DDDDDD",
+    },
+    content: {
+      ...Descriptions,
+      backgroundColor: "#DDDDDD",
+    },
   },
 };
 
