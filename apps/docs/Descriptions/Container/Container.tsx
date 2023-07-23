@@ -21,17 +21,6 @@ export const DescriptionsContainer = (
   const containerRef = ref ?? cmpRef;
 
   useEffect(() => {
-    if (!containerRef?.current) return;
-
-    const containerWidth = containerRef.current.getBoundingClientRect().width;
-
-    setDescriptionsState((state) => ({
-      ...state,
-      containerWidth,
-    }));
-  }, [containerRef]);
-
-  useEffect(() => {
     let labelHeightUnit = getUnit(labelHeight);
 
     let nextLabelHeight = +labelHeight?.replace(
@@ -80,30 +69,62 @@ export const DescriptionsContainer = (
 
   return (
     <DescriptionsProvider layout={layout}>
-      {<Renderer>{children}</Renderer>}
+      {<Renderer ref={containerRef}>{children}</Renderer>}
     </DescriptionsProvider>
   );
 };
 
-DescriptionsContainer.Vertical = function Vertical({ children }: TInnerProps) {
-  const { theme } = useDamonsUITheme();
+DescriptionsContainer.Vertical = forwardRef<HTMLDivElement, TInnerProps>(
+  function Vertical({ children }, ref: MutableRefObject<HTMLDivElement>) {
+    const { theme } = useDamonsUITheme();
+    const { setDescriptionsState } = useDescriptions();
 
-  return (
-    <S.Container borderColor={theme.descriptions.item.borderColor}>
-      <S.VerticalBody>{children}</S.VerticalBody>
-    </S.Container>
-  );
-};
+    useEffect(() => {
+      if (!ref.current) return;
 
-DescriptionsContainer.Horizontal = function Horizontal({
-  children,
-}: TInnerProps) {
-  return (
-    <S.Container>
-      <S.HorizontalBody>{children}</S.HorizontalBody>
-    </S.Container>
-  );
-};
+      const containerWidth = ref.current.getBoundingClientRect().width;
+
+      setDescriptionsState((state) => ({
+        ...state,
+        containerWidth,
+      }));
+    }, [ref, setDescriptionsState]);
+
+    return (
+      <S.Container ref={ref} borderColor={theme.descriptions.item.borderColor}>
+        <S.VerticalBody>{children}</S.VerticalBody>
+      </S.Container>
+    );
+  }
+);
+
+DescriptionsContainer.Horizontal = forwardRef<HTMLDivElement, TInnerProps>(
+  function Horizontal(
+    { children }: TInnerProps,
+    ref: MutableRefObject<HTMLDivElement>
+  ) {
+    const { theme } = useDamonsUITheme();
+
+    const { setDescriptionsState } = useDescriptions();
+
+    useEffect(() => {
+      if (!ref.current) return;
+
+      const containerWidth = ref.current.getBoundingClientRect().width;
+
+      setDescriptionsState((state) => ({
+        ...state,
+        containerWidth,
+      }));
+    }, [ref, setDescriptionsState]);
+
+    return (
+      <S.Container ref={ref} borderColor={theme.descriptions.item.borderColor}>
+        <S.HorizontalBody>{children}</S.HorizontalBody>
+      </S.Container>
+    );
+  }
+);
 
 export const Container = forwardRef<HTMLDivElement, TContainerProps>(
   DescriptionsContainer

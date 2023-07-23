@@ -15,11 +15,17 @@ export const Item = ({
   const { theme } = useDamonsUITheme();
   const { descriptionsState } = useDescriptions();
 
+  console.log({
+    unit,
+    containerWidth: descriptionsState.containerWidth,
+    width: (descriptionsState.containerWidth * unit) / 12,
+  });
+
   return (
     <S.ItemContainer
       borderColor={borderColor ?? theme.descriptions.item.borderColor}
       layout={descriptionsState.layout}
-      unit={unit / descriptionsState.unit}
+      width={`${(descriptionsState.containerWidth * unit) / 12}px`}
     >
       <S.Label
         layout={descriptionsState.layout}

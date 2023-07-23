@@ -4,6 +4,7 @@ import {
   SetStateAction,
   createContext,
   useContext,
+  useMemo,
   useState,
 } from "react";
 
@@ -53,13 +54,16 @@ export const DescriptionsProvider = ({ layout, children }: TContextProps) => {
   const [descriptionsState, setDescriptionsState] =
     useState<TInitialDescriptionsState>({ ...initialState, layout });
 
+  const value = useMemo(
+    () => ({
+      descriptionsState,
+      setDescriptionsState,
+    }),
+    [descriptionsState, setDescriptionsState]
+  );
+
   return (
-    <DescriptionsContext.Provider
-      value={{
-        descriptionsState,
-        setDescriptionsState,
-      }}
-    >
+    <DescriptionsContext.Provider value={value}>
       {children}
     </DescriptionsContext.Provider>
   );

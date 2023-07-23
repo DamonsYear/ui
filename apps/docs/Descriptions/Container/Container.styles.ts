@@ -2,10 +2,11 @@ import { CSSProps } from "@damons-ui/react-core";
 import styled from "styled-components";
 
 export const Container = styled.article<CSSProps>`
-  border-left: 1px solid ${(props) => props.borderColor};
+  border-top: 1px solid ${(props) => props.borderColor};
 `;
 
 export const VerticalBody = styled.div`
+  box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
 `;

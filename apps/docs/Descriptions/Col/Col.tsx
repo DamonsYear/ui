@@ -14,7 +14,7 @@ export const Col = ({ children, unit, height }: TCol) => {
     <VStack
       flexWrap="wrap"
       height={height}
-      width={`calc(${unit / descriptionsState.unit} * 100%)`}
+      width={`${(descriptionsState.containerWidth * unit) / 12}px`}
     >
       {children}
     </VStack>

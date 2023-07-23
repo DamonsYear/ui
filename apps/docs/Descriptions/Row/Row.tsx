@@ -14,7 +14,7 @@ export const Row = ({ children, unit, height }: TRow) => {
     <HStack
       flexWrap="wrap"
       height={height}
-      width={`calc(${unit / descriptionsState.unit} * 100%)`}
+      width={`${(descriptionsState.containerWidth * unit) / 12}px`}
     >
       {children}
     </HStack>

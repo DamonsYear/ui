@@ -1,40 +1,39 @@
-import { css, styled } from "styled-components";
+import { styled } from "styled-components";
 import { TInitialDescriptionsState } from "../Container/Container.context";
 import { CSSProps } from "@damons-ui/react-core";
 
 export type TItemContainerProps = {
   layout: TInitialDescriptionsState["layout"];
-  unit: TInitialDescriptionsState["unit"];
 } & CSSProps;
 
 export const ItemContainer = styled.section<TItemContainerProps>`
   box-sizing: border-box;
-  display: ${(props) => (props.layout === "horizontal" ? "flex" : "block")};
-  width: calc(100% * ${(props) => props.unit});
 
-  border-right: 1px solid ${(props) => props.borderColor};
-  border-bottom: 1px solid ${(props) => props.borderColor};
+  display: ${(props) => (props.layout === "horizontal" ? "flex" : "block")};
+  width: ${(props) => props.width};
+
+  border-left: 1px solid ${(props) => props.borderColor};
 `;
 
 export type TItemLabelProps = {
   layout: TInitialDescriptionsState["layout"];
   height: string;
 } & CSSProps;
+
 export const Label = styled.header<TItemLabelProps>`
   display: flex;
   justify-content: center;
   align-items: center;
+
   flex: 1;
+
+  width: 100%;
 
   height: ${(props) => props.height};
   background-color: lightgray;
-  /* border-right: 1px solid ${(props) => props.borderColor}; */
 
-  ${(props) =>
-    props.layout === "vertical" &&
-    css`
-      border-bottom: 1px solid ${props.borderColor};
-    `}
+  border-right: 1px solid ${(props) => props.borderColor};
+  border-bottom: 1px solid ${(props) => props.borderColor};
 `;
 
 export type TItemContentProps = {
@@ -44,7 +43,12 @@ export const Content = styled.div<TItemContentProps>`
   display: flex;
   justify-content: center;
   align-items: center;
+
   flex: 1;
 
+  width: 100%;
   height: ${(props) => props.height};
+
+  border-right: 1px solid ${(props) => props.borderColor};
+  border-bottom: 1px solid ${(props) => props.borderColor};
 `;

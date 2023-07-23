@@ -74,7 +74,7 @@ export default function Page() {
             label="담당자 7"
             labelHeight="40px"
             contentHeight="40px"
-            unit={12}
+            unit={6}
           >
             황재영
           </Descriptions.Item>
@@ -83,7 +83,7 @@ export default function Page() {
             label="담당자 7"
             labelHeight="40px"
             contentHeight="40px"
-            unit={12}
+            unit={6}
           >
             황재영
           </Descriptions.Item>
@@ -92,19 +92,19 @@ export default function Page() {
             label="담당자 7"
             labelHeight="40px"
             contentHeight="40px"
-            unit={12}
+            unit={6}
           >
             황재영
           </Descriptions.Item>
         </Descriptions.Col>
 
         <Descriptions.Col unit={6}>
-          <Descriptions.Row unit={12}>
+          <Descriptions.Row unit={6}>
             <Descriptions.Item
               label="담당자 7"
               labelHeight="40px"
               contentHeight="40px"
-              unit={6}
+              unit={3}
             >
               황재영22
             </Descriptions.Item>
@@ -112,18 +112,18 @@ export default function Page() {
               label="담당자 7"
               labelHeight="40px"
               contentHeight="40px"
-              unit={6}
+              unit={3}
             >
               황재영
             </Descriptions.Item>
           </Descriptions.Row>
 
-          <Descriptions.Row unit={12}>
+          <Descriptions.Row unit={6}>
             <Descriptions.Item
               label="담당자 7"
               labelHeight="40px"
               contentHeight="40px"
-              unit={6}
+              unit={3}
             >
               황재영
             </Descriptions.Item>
@@ -131,18 +131,18 @@ export default function Page() {
               label="담당자 7"
               labelHeight="40px"
               contentHeight="40px"
-              unit={6}
+              unit={3}
             >
               황재영
             </Descriptions.Item>
           </Descriptions.Row>
 
-          <Descriptions.Row unit={12}>
+          <Descriptions.Row unit={6}>
             <Descriptions.Item
               label="담당자 7"
               labelHeight="40px"
               contentHeight="40px"
-              unit={6}
+              unit={3}
             >
               황재영
             </Descriptions.Item>
@@ -150,7 +150,7 @@ export default function Page() {
               label="담당자 7"
               labelHeight="40px"
               contentHeight="40px"
-              unit={6}
+              unit={3}
             >
               황재영
             </Descriptions.Item>
