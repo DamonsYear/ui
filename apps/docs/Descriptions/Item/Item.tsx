@@ -23,14 +23,21 @@ export const Item = ({
     >
       <S.Label
         layout={descriptionsState.layout}
-        height={labelHeight}
         borderColor={borderColor ?? theme.descriptions.label.borderColor}
+        height={
+          labelHeight ??
+          descriptionsState.label.height + descriptionsState.label.heightUnit
+        }
       >
         {label}
       </S.Label>
       <S.Content
-        height={contentHeight}
         borderColor={borderColor ?? theme.descriptions.content.borderColor}
+        height={
+          contentHeight ??
+          descriptionsState.content.height +
+            descriptionsState.content.heightUnit
+        }
       >
         {children}
       </S.Content>

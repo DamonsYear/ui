@@ -1,4 +1,10 @@
 import { PropsWithChildren } from "react";
-import { TStyledTbodyProps } from "./Container.styles";
+import { TContextProps } from "./Container.context";
 
-export type TContainerProps = TStyledTbodyProps & PropsWithChildren;
+export type TContainerProps = {
+  layout?: TContextProps["layout"];
+  labelHeight?: string;
+  contentHeight?: string;
+} & PropsWithChildren;
+
+export type TInnerProps = PropsWithChildren;

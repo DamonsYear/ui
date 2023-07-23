@@ -2189,6 +2189,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@damons-ui/css-core@workspace:^, @damons-ui/css-core@workspace:packages/core/css":
+  version: 0.0.0-use.local
+  resolution: "@damons-ui/css-core@workspace:packages/core/css"
+  languageName: unknown
+  linkType: soft
+
 "@damons-ui/heading@workspace:packages/components/Heading":
   version: 0.0.0-use.local
   resolution: "@damons-ui/heading@workspace:packages/components/Heading"
@@ -4528,6 +4534,7 @@ __metadata:
     "@damons-ui/box": "workspace:^"
     "@damons-ui/button": "workspace:^"
     "@damons-ui/checkbox": "workspace:^"
+    "@damons-ui/css-core": "workspace:^"
     "@damons-ui/react-core": "workspace:^"
     "@damons-ui/stack": "workspace:^"
     "@types/node": ^17.0.12

@@ -1,11 +1,8 @@
+import { CSSProps } from "@damons-ui/react-core";
 import styled from "styled-components";
 
-export type TStyledTbodyProps = {
-  layout: "vertical" | "horizontal";
-};
-export const Container = styled.article`
-  border-top: 1px solid gray;
-  border-left: 1px solid gray;
+export const Container = styled.article<CSSProps>`
+  border-left: 1px solid ${(props) => props.borderColor};
 `;
 
 export const VerticalBody = styled.div`

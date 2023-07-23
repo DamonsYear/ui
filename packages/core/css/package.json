@@ -1,0 +1,6 @@
+{
+  "name": "@damons-ui/css-core",
+  "packageManager": "yarn@3.6.0",
+  "main": "./src/index.ts",
+  "types": "./dist/index.d.ts"
+}

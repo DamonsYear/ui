@@ -11,7 +11,8 @@ export const ItemContainer = styled.section<TItemContainerProps>`
   box-sizing: border-box;
   display: ${(props) => (props.layout === "horizontal" ? "flex" : "block")};
   width: calc(100% * ${(props) => props.unit});
-  /* border-right: 1px solid lightgray; */
+
+  border-right: 1px solid ${(props) => props.borderColor};
   border-bottom: 1px solid ${(props) => props.borderColor};
 `;
 
@@ -27,7 +28,7 @@ export const Label = styled.header<TItemLabelProps>`
 
   height: ${(props) => props.height};
   background-color: lightgray;
-  border-right: 1px solid ${(props) => props.borderColor};
+  /* border-right: 1px solid ${(props) => props.borderColor}; */
 
   ${(props) =>
     props.layout === "vertical" &&
@@ -46,5 +47,4 @@ export const Content = styled.div<TItemContentProps>`
   flex: 1;
 
   height: ${(props) => props.height};
-  border-right: 1px solid ${(props) => props.borderColor};
 `;
