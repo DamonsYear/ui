@@ -13,6 +13,7 @@
     "@damons-ui/button": "workspace:^",
     "@damons-ui/checkbox": "workspace:^",
     "@damons-ui/css-core": "workspace:^",
+    "@damons-ui/descriptions": "workspace:^",
     "@damons-ui/react-core": "workspace:^",
     "@damons-ui/stack": "workspace:^",
     "next": "^13.4.1",

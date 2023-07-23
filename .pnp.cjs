@@ -36,6 +36,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:packages/components/Checkbox"\
       },\
       {\
+        "name": "@damons-ui/descriptions",\
+        "reference": "workspace:packages/components/Descriptions"\
+      },\
+      {\
         "name": "@damons-ui/heading",\
         "reference": "workspace:packages/components/Heading"\
       },\
@@ -83,6 +87,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["@damons-ui/button", ["workspace:packages/components/Button"]],\
       ["@damons-ui/checkbox", ["workspace:packages/components/Checkbox"]],\
       ["@damons-ui/css-core", ["workspace:packages/core/css"]],\
+      ["@damons-ui/descriptions", ["workspace:packages/components/Descriptions"]],\
       ["@damons-ui/heading", ["workspace:packages/components/Heading"]],\
       ["@damons-ui/input", ["workspace:packages/components/Input"]],\
       ["@damons-ui/react-core", ["workspace:packages/core/react"]],\
@@ -3454,6 +3459,31 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "SOFT"\
         }]\
       ]],\
+      ["@damons-ui/descriptions", [\
+        ["workspace:packages/components/Descriptions", {\
+          "packageLocation": "./packages/components/Descriptions/",\
+          "packageDependencies": [\
+            ["@damons-ui/descriptions", "workspace:packages/components/Descriptions"],\
+            ["@damons-ui/css-core", "workspace:packages/core/css"],\
+            ["@damons-ui/react-core", "workspace:packages/core/react"],\
+            ["@damons-ui/stack", "workspace:packages/components/Stack"],\
+            ["@types/react", "npm:18.2.7"],\
+            ["@types/react-dom", "npm:18.2.4"],\
+            ["@typescript-eslint/eslint-plugin", "virtual:96fa76d92eedff6af588f029a7f8613f1592daef1b44dbd39ade9b8d981aeed3e90feea0b9601d361960f86f381889a69c64fdbb94b8095f910962897edc2245#npm:5.59.8"],\
+            ["css-in-js", "workspace:packages/css-in-js"],\
+            ["eslint", "npm:7.32.0"],\
+            ["eslint-config-custom", "workspace:packages/eslint-config-custom"],\
+            ["eslint-plugin-import", "virtual:96fa76d92eedff6af588f029a7f8613f1592daef1b44dbd39ade9b8d981aeed3e90feea0b9601d361960f86f381889a69c64fdbb94b8095f910962897edc2245#npm:2.27.5"],\
+            ["eslint-plugin-react", "virtual:96fa76d92eedff6af588f029a7f8613f1592daef1b44dbd39ade9b8d981aeed3e90feea0b9601d361960f86f381889a69c64fdbb94b8095f910962897edc2245#npm:7.32.2"],\
+            ["eslint-plugin-turbo", "virtual:96fa76d92eedff6af588f029a7f8613f1592daef1b44dbd39ade9b8d981aeed3e90feea0b9601d361960f86f381889a69c64fdbb94b8095f910962897edc2245#npm:1.10.1"],\
+            ["prettier-config-custom", "workspace:packages/prettier-config-custom"],\
+            ["react", "npm:18.2.0"],\
+            ["tsconfig", "workspace:packages/tsconfig"],\
+            ["typescript", "patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=b5f058"]\
+          ],\
+          "linkType": "SOFT"\
+        }]\
+      ]],\
       ["@damons-ui/heading", [\
         ["workspace:packages/components/Heading", {\
           "packageLocation": "./packages/components/Heading/",\
@@ -6485,6 +6515,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@damons-ui/button", "workspace:packages/components/Button"],\
             ["@damons-ui/checkbox", "workspace:packages/components/Checkbox"],\
             ["@damons-ui/css-core", "workspace:packages/core/css"],\
+            ["@damons-ui/descriptions", "workspace:packages/components/Descriptions"],\
             ["@damons-ui/react-core", "workspace:packages/core/react"],\
             ["@damons-ui/stack", "workspace:packages/components/Stack"],\
             ["@types/node", "npm:17.0.45"],\

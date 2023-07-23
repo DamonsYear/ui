@@ -2195,6 +2195,29 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@damons-ui/descriptions@workspace:^, @damons-ui/descriptions@workspace:packages/components/Descriptions":
+  version: 0.0.0-use.local
+  resolution: "@damons-ui/descriptions@workspace:packages/components/Descriptions"
+  dependencies:
+    "@damons-ui/css-core": "workspace:^"
+    "@damons-ui/react-core": "workspace:^"
+    "@damons-ui/stack": "workspace:^"
+    "@types/react": ^18.2.0
+    "@types/react-dom": ^18.2.0
+    "@typescript-eslint/eslint-plugin": ^5.59.8
+    css-in-js: "workspace:^"
+    eslint: ^7.32.0
+    eslint-config-custom: "workspace:^"
+    eslint-plugin-import: ^2.27.5
+    eslint-plugin-react: ^7.32.2
+    eslint-plugin-turbo: latest
+    prettier-config-custom: "*"
+    react: ^18.2.0
+    tsconfig: "workspace:^"
+    typescript: ^5.0.4
+  languageName: unknown
+  linkType: soft
+
 "@damons-ui/heading@workspace:packages/components/Heading":
   version: 0.0.0-use.local
   resolution: "@damons-ui/heading@workspace:packages/components/Heading"
@@ -4535,6 +4558,7 @@ __metadata:
     "@damons-ui/button": "workspace:^"
     "@damons-ui/checkbox": "workspace:^"
     "@damons-ui/css-core": "workspace:^"
+    "@damons-ui/descriptions": "workspace:^"
     "@damons-ui/react-core": "workspace:^"
     "@damons-ui/stack": "workspace:^"
     "@types/node": ^17.0.12

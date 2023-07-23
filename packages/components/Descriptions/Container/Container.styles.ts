@@ -1,5 +1,5 @@
 import { CSSProps } from "@damons-ui/react-core";
-import styled from "styled-components";
+import styled from "css-in-js";
 
 export const Container = styled.article<CSSProps>`
   border-top: 1px solid ${(props) => props.borderColor};

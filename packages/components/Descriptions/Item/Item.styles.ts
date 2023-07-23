@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import styled from "css-in-js";
 import { TInitialDescriptionsState } from "../Container/Container.context";
 import { CSSProps } from "@damons-ui/react-core";
 

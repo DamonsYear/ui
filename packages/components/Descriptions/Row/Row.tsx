@@ -1,22 +1,22 @@
-import { VStack } from "@damons-ui/stack";
+import { HStack } from "@damons-ui/stack";
 import React, { PropsWithChildren } from "react";
 import { useDescriptions } from "../Container/Container.context";
 
-export type TCol = {
+export type TRow = {
   unit?: number;
   height?: string;
 } & PropsWithChildren;
 
-export const Col = ({ children, unit, height }: TCol) => {
+export const Row = ({ children, unit = 6, height }: TRow) => {
   const { descriptionsState } = useDescriptions();
 
   return (
-    <VStack
+    <HStack
       flexWrap="wrap"
       height={height}
-      width={`${(descriptionsState.containerWidth * unit) / 12}px`}
+      width={`${((descriptionsState.containerWidth ?? 0) * unit) / 12}px`}
     >
       {children}
-    </VStack>
+    </HStack>
   );
 };
