@@ -3,6 +3,7 @@ import React, {
   MutableRefObject,
   forwardRef,
   useEffect,
+  useRef,
 } from "react";
 import { TContainerProps, TInnerProps } from "./types";
 import * as S from "./Container.styles";
@@ -24,6 +25,8 @@ function DescriptionsContainer(
   ref: ForwardedRef<HTMLDivElement>
 ) {
   const { descriptionsState, setDescriptionsState } = useDescriptions();
+
+  const cmpRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let labelHeightUnit = getUnit(labelHeight);
@@ -73,7 +76,7 @@ function DescriptionsContainer(
 
   return (
     <DescriptionsProvider layout={layout}>
-      {<Renderer ref={ref}>{children}</Renderer>}
+      {<Renderer ref={ref ?? cmpRef}>{children}</Renderer>}
     </DescriptionsProvider>
   );
 }

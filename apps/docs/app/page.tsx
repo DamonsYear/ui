@@ -1,6 +1,6 @@
 "use client";
 import Box from "@damons-ui/box";
-import { Descriptions } from "../Descriptions";
+import { Descriptions } from "@damons-ui/descriptions";
 
 export default function Page() {
   return (

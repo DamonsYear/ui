@@ -19,7 +19,7 @@ export const Item = ({
     <S.ItemContainer
       borderColor={borderColor ?? theme.descriptions.item.borderColor}
       layout={descriptionsState.layout}
-      width={`${(descriptionsState?.containerWidth ?? 0 * unit) / 12}px`}
+      width={`${((descriptionsState?.containerWidth ?? 0) * unit) / 12}px`}
     >
       <S.Label
         layout={descriptionsState.layout}

@@ -7,7 +7,7 @@ export type TCol = {
   height?: string;
 } & PropsWithChildren;
 
-export const Col = ({ children, unit = 6, height }: TCol) => {
+export const Col = ({ children, unit = 3, height }: TCol) => {
   const { descriptionsState } = useDescriptions();
 
   return (
