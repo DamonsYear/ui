@@ -1,16 +1,56 @@
-import { PropsWithChildren, createContext, useContext, useState } from "react";
+import {
+  Dispatch,
+  PropsWithChildren,
+  SetStateAction,
+  createContext,
+  useContext,
+  useState,
+} from "react";
 import { CSSProps } from "../style";
 
+type ContextState = {
+  theme: ThemeState;
+  setTheme: Dispatch<SetStateAction<ThemeState>>;
+};
 type ThemeState = {
-  [K: string | number]: CSSProps;
+  descriptions: {
+    row: CSSProps;
+    col: CSSProps;
+    item: CSSProps;
+    label: CSSProps;
+    content: CSSProps;
+  };
 };
 
-const initialState = {};
+const Descriptions = {
+  borderColor: "#BEBEBE",
+} as const;
 
-export const ThemeStore = createContext(initialState);
+const initialThemeState = {
+  descriptions: {
+    row: { ...Descriptions },
+    col: { ...Descriptions },
+    item: { ...Descriptions },
+    label: {
+      ...Descriptions,
+      backgroundColor: "#DDDDDD",
+    },
+    content: {
+      ...Descriptions,
+      backgroundColor: "#DDDDDD",
+    },
+  },
+};
+
+const initialState = {
+  theme: initialThemeState,
+  setTheme: () => {},
+};
+
+export const ThemeStore = createContext<ContextState>(initialState);
 
 export const DamonsUIThemeProvider = ({ children }: PropsWithChildren) => {
-  const [theme, setTheme] = useState<ThemeState>(initialState);
+  const [theme, setTheme] = useState<ThemeState>(initialThemeState);
 
   return (
     <ThemeStore.Provider value={{ theme, setTheme }}>
