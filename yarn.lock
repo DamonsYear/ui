@@ -2245,6 +2245,27 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@damons-ui/toast@workspace:packages/components/Toast":
+  version: 0.0.0-use.local
+  resolution: "@damons-ui/toast@workspace:packages/components/Toast"
+  dependencies:
+    "@damons-ui/react-core": "workspace:^"
+    "@types/react": ^18.2.0
+    "@types/react-dom": ^18.2.0
+    "@typescript-eslint/eslint-plugin": ^5.59.8
+    css-in-js: "workspace:^"
+    eslint: ^7.32.0
+    eslint-config-custom: "workspace:^"
+    eslint-plugin-import: ^2.27.5
+    eslint-plugin-react: ^7.32.2
+    eslint-plugin-turbo: latest
+    prettier-config-custom: "*"
+    react: ^18.2.0
+    tsconfig: "workspace:^"
+    typescript: ^5.0.4
+  languageName: unknown
+  linkType: soft
+
 "@emotion/is-prop-valid@npm:^1.2.1":
   version: 1.2.1
   resolution: "@emotion/is-prop-valid@npm:1.2.1"
