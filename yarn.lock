@@ -2245,7 +2245,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@damons-ui/toast@workspace:packages/components/Toast":
+"@damons-ui/toast@workspace:^, @damons-ui/toast@workspace:packages/components/Toast":
   version: 0.0.0-use.local
   resolution: "@damons-ui/toast@workspace:packages/components/Toast"
   dependencies:
@@ -4489,6 +4489,7 @@ __metadata:
     "@damons-ui/descriptions": "workspace:^"
     "@damons-ui/react-core": "workspace:^"
     "@damons-ui/stack": "workspace:^"
+    "@damons-ui/toast": "workspace:^"
     "@types/node": ^17.0.12
     "@types/react": ^18.0.22
     "@types/react-dom": ^18.0.7

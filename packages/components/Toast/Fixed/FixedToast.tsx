@@ -13,7 +13,7 @@ export const FixedToast = ({ text, isActive, ...props }: TFixedToastProps) => {
         <FixedToast.Container
           key={isActive ? "toast-active" : "toast-inactive"}
           initial={{ width: 68 }}
-          animate={{ width: 240 }}
+          animate={{ width: isActive ? 240 : 68 }}
           exit={{ width: 68 }}
           {...props}
         />

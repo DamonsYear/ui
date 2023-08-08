@@ -6454,6 +6454,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@damons-ui/descriptions", "workspace:packages/components/Descriptions"],\
             ["@damons-ui/react-core", "workspace:packages/core/react"],\
             ["@damons-ui/stack", "workspace:packages/components/Stack"],\
+            ["@damons-ui/toast", "workspace:packages/components/Toast"],\
             ["@types/node", "npm:17.0.45"],\
             ["@types/react", "npm:18.2.7"],\
             ["@types/react-dom", "npm:18.2.4"],\
