@@ -6,7 +6,14 @@ import * as S from "./FixedToast.style";
 import { Text } from "@damons-ui/text";
 import { TFixedToastProps } from "./types";
 
-export const FixedToast = ({ text, isActive, ...props }: TFixedToastProps) => {
+export const FixedToast = ({
+  text,
+  textColor = "#fafafa",
+  isActive,
+  children,
+  textStyle,
+  ...props
+}: TFixedToastProps) => {
   return (
     <LazyMotion features={domAnimation}>
       <AnimatePresence>
@@ -16,9 +23,14 @@ export const FixedToast = ({ text, isActive, ...props }: TFixedToastProps) => {
           animate={{ width: isActive ? 240 : 68 }}
           exit={{ width: 68 }}
           {...props}
-        />
-
-        {text && <FixedToast.Text as="p">{text}</FixedToast.Text>}
+        >
+          {isActive && text && (
+            <FixedToast.Text as="p" color={textColor} margin="0" {...textStyle}>
+              {text}
+            </FixedToast.Text>
+          )}
+          {children}
+        </FixedToast.Container>
       </AnimatePresence>
     </LazyMotion>
   );

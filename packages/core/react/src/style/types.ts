@@ -26,7 +26,10 @@ export type PseudosPropKey =
   | "_required"
   | "_visited";
 
-export type ComponentBaseCSS = CSS.Properties<string | number>;
+export type ComponentBaseCSS = Omit<
+  CSS.Properties<string | number>,
+  "translate"
+>;
 export type ComponentPseudoCSS = ComponentBaseCSS & {
   [P in PseudosPropKey]?: ComponentBaseCSS;
 };

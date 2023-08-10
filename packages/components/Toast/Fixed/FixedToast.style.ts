@@ -4,6 +4,10 @@ import styled from "css-in-js";
 export const Container = styled.section<CSSProps>`
   position: fixed;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   ${baseCSS}
   ${(props) => props._hover && pseudoCSS(props._hover, ":hover")}
   ${(props) => props._before && pseudoCSS(props._before, ":before")}
