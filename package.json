@@ -6,7 +6,8 @@
     "packages/*",
     "packages/components/*",
     "packages/core/*",
-    "packages/hooks/*"
+    "packages/hooks/*",
+    "packages/hooks/react/*"
   ],
   "private": true,
   "scripts": {

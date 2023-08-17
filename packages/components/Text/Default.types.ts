@@ -4,4 +4,4 @@ import { PropsWithChildren } from "react";
 export type TDefaultProps = {
   as: "p" | "span" | "div" | "strong";
 } & PropsWithChildren &
-  CSSProps;
+  Omit<CSSProps, "transition">;

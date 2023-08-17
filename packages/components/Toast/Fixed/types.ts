@@ -1,11 +1,14 @@
 import { CSSProps } from "@damons-ui/react-core";
-import { Transition } from "framer-motion";
+import { AnimationProps } from "framer-motion";
+
 import { PropsWithChildren } from "react";
 
 export type TFixedToastProps = {
   text?: string;
   textColor?: CSSProps["color"];
-  textStyle?: Omit<CSSProps, "transition"> & Transition;
+  textStyle?: CSSProps & AnimationProps;
   isActive: boolean;
+  activeDuration?: number;
+  onClose: () => void;
 } & CSSProps &
   PropsWithChildren;

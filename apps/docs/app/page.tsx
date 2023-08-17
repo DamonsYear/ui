@@ -16,6 +16,10 @@ export default function Page() {
     setIsActive((state) => !state);
   };
 
+  const onClose = () => {
+    setIsActive(false);
+  };
+
   return (
     <>
       <Box color="#fb0" background="#333">
@@ -24,6 +28,7 @@ export default function Page() {
         <button onClick={onToggle}>CLICK</button>
       </Box>
       <FixedToast
+        textColor="#fff"
         text="테스트중!"
         isActive={isActive}
         backgroundColor="#123467"
@@ -32,6 +37,8 @@ export default function Page() {
         height="68px"
         bottom="20px"
         right="20px"
+        activeDuration={2000}
+        onClose={onClose}
       ></FixedToast>
     </>
   );

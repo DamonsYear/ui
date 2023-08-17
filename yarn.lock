@@ -2181,7 +2181,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@damons-ui/react-hooks@workspace:packages/hooks/react":
+"@damons-ui/react-hooks@workspace:^, @damons-ui/react-hooks@workspace:packages/hooks/react":
   version: 0.0.0-use.local
   resolution: "@damons-ui/react-hooks@workspace:packages/hooks/react"
   dependencies:
@@ -2250,6 +2250,7 @@ __metadata:
   resolution: "@damons-ui/toast@workspace:packages/components/Toast"
   dependencies:
     "@damons-ui/react-core": "workspace:^"
+    "@damons-ui/react-hooks": "workspace:^"
     "@damons-ui/text": "workspace:^"
     "@types/react": ^18.2.0
     "@types/react-dom": ^18.2.0

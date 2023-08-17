@@ -3548,6 +3548,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@damons-ui/toast", "workspace:packages/components/Toast"],\
             ["@damons-ui/react-core", "workspace:packages/core/react"],\
+            ["@damons-ui/react-hooks", "workspace:packages/hooks/react"],\
             ["@damons-ui/text", "workspace:packages/components/Text"],\
             ["@types/react", "npm:18.2.7"],\
             ["@types/react-dom", "npm:18.2.4"],\
