@@ -28,8 +28,6 @@ export default function Page() {
         <button onClick={onToggle}>CLICK</button>
       </Box>
       <FixedToast
-        textColor="#fff"
-        text="테스트중!"
         isActive={isActive}
         backgroundColor="#123467"
         borderRadius={"34px"}
@@ -39,7 +37,9 @@ export default function Page() {
         right="20px"
         activeDuration={2000}
         onClose={onClose}
-      ></FixedToast>
+      >
+        <FixedToast.Text color="#fff">테스트 중!</FixedToast.Text>
+      </FixedToast>
     </>
   );
 }
