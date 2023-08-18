@@ -6,14 +6,15 @@
     "packages/*",
     "packages/components/*",
     "packages/core/*",
-    "packages/hooks/*"
+    "packages/hooks/*",
+    "packages/hooks/react/*"
   ],
   "private": true,
   "scripts": {
     "commit": "cz",
     "build": "turbo run build",
     "type-check": "turbo run type-check",
-    "dev": "turbo run dev --concurrency 17",
+    "dev": "turbo run dev --concurrency 19",
     "dev:docs": "yarn workspace docs run dev",
     "lint:turbo": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",

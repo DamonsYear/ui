@@ -5,14 +5,11 @@ export type PropsWithId = {
   id: string;
 };
 
-type TIntrinsicTranslate = "yes" | "no" | undefined;
 export type TCheckBoxBaseProps = {
   checked: boolean;
 
   activeBackground: CSSProps["background"];
   defaultBackground: CSSProps["background"];
-
-  translate?: TIntrinsicTranslate & CSSProps["translate"];
 };
 
 export type TCheckBoxState = {

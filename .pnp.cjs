@@ -56,6 +56,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:packages/components/Text"\
       },\
       {\
+        "name": "@damons-ui/toast",\
+        "reference": "workspace:packages/components/Toast"\
+      },\
+      {\
         "name": "@damons-ui/css-core",\
         "reference": "workspace:packages/core/css"\
       },\
@@ -98,6 +102,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["@damons-ui/react-hooks", ["workspace:packages/hooks/react"]],\
       ["@damons-ui/stack", ["workspace:packages/components/Stack"]],\
       ["@damons-ui/text", ["workspace:packages/components/Text"]],\
+      ["@damons-ui/toast", ["workspace:packages/components/Toast"]],\
       ["css-in-js", ["workspace:packages/css-in-js"]],\
       ["damons-ui", ["workspace:."]],\
       ["docs", ["workspace:apps/docs"]],\
@@ -3537,7 +3542,41 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "SOFT"\
         }]\
       ]],\
+      ["@damons-ui/toast", [\
+        ["workspace:packages/components/Toast", {\
+          "packageLocation": "./packages/components/Toast/",\
+          "packageDependencies": [\
+            ["@damons-ui/toast", "workspace:packages/components/Toast"],\
+            ["@damons-ui/react-core", "workspace:packages/core/react"],\
+            ["@damons-ui/react-hooks", "workspace:packages/hooks/react"],\
+            ["@damons-ui/text", "workspace:packages/components/Text"],\
+            ["@types/react", "npm:18.2.7"],\
+            ["@types/react-dom", "npm:18.2.4"],\
+            ["@typescript-eslint/eslint-plugin", "virtual:96fa76d92eedff6af588f029a7f8613f1592daef1b44dbd39ade9b8d981aeed3e90feea0b9601d361960f86f381889a69c64fdbb94b8095f910962897edc2245#npm:5.59.8"],\
+            ["css-in-js", "workspace:packages/css-in-js"],\
+            ["eslint", "npm:7.32.0"],\
+            ["eslint-config-custom", "workspace:packages/eslint-config-custom"],\
+            ["eslint-plugin-import", "virtual:96fa76d92eedff6af588f029a7f8613f1592daef1b44dbd39ade9b8d981aeed3e90feea0b9601d361960f86f381889a69c64fdbb94b8095f910962897edc2245#npm:2.27.5"],\
+            ["eslint-plugin-react", "virtual:96fa76d92eedff6af588f029a7f8613f1592daef1b44dbd39ade9b8d981aeed3e90feea0b9601d361960f86f381889a69c64fdbb94b8095f910962897edc2245#npm:7.32.2"],\
+            ["eslint-plugin-turbo", "virtual:96fa76d92eedff6af588f029a7f8613f1592daef1b44dbd39ade9b8d981aeed3e90feea0b9601d361960f86f381889a69c64fdbb94b8095f910962897edc2245#npm:1.10.1"],\
+            ["framer-motion", "virtual:4ee3654475b94ab571f9e6a769647a7623432504b5b05575d7b71ad5de1e3722e27a1af7257ce695d8207daff9213151f3e1bf85381a1e7a573c4f5fbc423afd#npm:10.15.1"],\
+            ["prettier-config-custom", "workspace:packages/prettier-config-custom"],\
+            ["react", "npm:18.2.0"],\
+            ["tsconfig", "workspace:packages/tsconfig"],\
+            ["typescript", "patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=b5f058"]\
+          ],\
+          "linkType": "SOFT"\
+        }]\
+      ]],\
       ["@emotion/is-prop-valid", [\
+        ["npm:0.8.8", {\
+          "packageLocation": "./.yarn/cache/@emotion-is-prop-valid-npm-0.8.8-261a0f2426-bb7ec6d48c.zip/node_modules/@emotion/is-prop-valid/",\
+          "packageDependencies": [\
+            ["@emotion/is-prop-valid", "npm:0.8.8"],\
+            ["@emotion/memoize", "npm:0.7.4"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:1.2.1", {\
           "packageLocation": "./.yarn/cache/@emotion-is-prop-valid-npm-1.2.1-794afe6a94-8f42dc573a.zip/node_modules/@emotion/is-prop-valid/",\
           "packageDependencies": [\
@@ -3548,6 +3587,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@emotion/memoize", [\
+        ["npm:0.7.4", {\
+          "packageLocation": "./.yarn/cache/@emotion-memoize-npm-0.7.4-5648cf11b8-4e3920d4ec.zip/node_modules/@emotion/memoize/",\
+          "packageDependencies": [\
+            ["@emotion/memoize", "npm:0.7.4"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:0.8.1", {\
           "packageLocation": "./.yarn/cache/@emotion-memoize-npm-0.8.1-9b1e35ff15-a19cc01a29.zip/node_modules/@emotion/memoize/",\
           "packageDependencies": [\
@@ -6409,6 +6455,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@damons-ui/descriptions", "workspace:packages/components/Descriptions"],\
             ["@damons-ui/react-core", "workspace:packages/core/react"],\
             ["@damons-ui/stack", "workspace:packages/components/Stack"],\
+            ["@damons-ui/toast", "workspace:packages/components/Toast"],\
             ["@types/node", "npm:17.0.45"],\
             ["@types/react", "npm:18.2.7"],\
             ["@types/react-dom", "npm:18.2.4"],\
@@ -7783,6 +7830,34 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["foreground-child", "npm:3.1.1"],\
             ["cross-spawn", "npm:7.0.3"],\
             ["signal-exit", "npm:4.0.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["framer-motion", [\
+        ["npm:10.15.1", {\
+          "packageLocation": "./.yarn/cache/framer-motion-npm-10.15.1-3ec30a2a4f-b8b08561d1.zip/node_modules/framer-motion/",\
+          "packageDependencies": [\
+            ["framer-motion", "npm:10.15.1"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:4ee3654475b94ab571f9e6a769647a7623432504b5b05575d7b71ad5de1e3722e27a1af7257ce695d8207daff9213151f3e1bf85381a1e7a573c4f5fbc423afd#npm:10.15.1", {\
+          "packageLocation": "./.yarn/__virtual__/framer-motion-virtual-7d938b1670/0/cache/framer-motion-npm-10.15.1-3ec30a2a4f-b8b08561d1.zip/node_modules/framer-motion/",\
+          "packageDependencies": [\
+            ["framer-motion", "virtual:4ee3654475b94ab571f9e6a769647a7623432504b5b05575d7b71ad5de1e3722e27a1af7257ce695d8207daff9213151f3e1bf85381a1e7a573c4f5fbc423afd#npm:10.15.1"],\
+            ["@emotion/is-prop-valid", "npm:0.8.8"],\
+            ["@types/react", "npm:18.2.7"],\
+            ["@types/react-dom", "npm:18.2.4"],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", null],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
           ],\
           "linkType": "HARD"\
         }]\

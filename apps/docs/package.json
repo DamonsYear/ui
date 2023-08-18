@@ -16,6 +16,7 @@
     "@damons-ui/descriptions": "workspace:^",
     "@damons-ui/react-core": "workspace:^",
     "@damons-ui/stack": "workspace:^",
+    "@damons-ui/toast": "workspace:^",
     "css-in-js": "workspace:^",
     "next": "^13.4.1",
     "react": "^18.2.0",
