@@ -1,21 +1,13 @@
-import { AdvancedPseudoSet, BasePseudoSet } from "./set";
+import { CSSProps } from "./types";
 
-export const getPrefixDash = (s: string) => `-${s.toLowerCase()}`;
+export type TransformCSSProp = Pick<
+  CSSProps,
+  | "transform"
+  | "transformBox"
+  | "transformOrigin"
+  | "transformStyle"
+  | "rotate"
+  | "scale"
+>;
 
-const OneDashPrefixList = ["moz", "khtml", "webkit", "ms"];
-
-export const toSnakeCase = (char: string) => {
-  if (OneDashPrefixList.some((testCase) => char.startsWith(testCase))) {
-    return getPrefixDash(char).replace(/[A-Z]/g, getPrefixDash);
-  }
-
-  return char.replace(/[A-Z]/g, getPrefixDash);
-};
-
-export const transformStyleProp = (char: string) => {
-  if (BasePseudoSet.has(char) || AdvancedPseudoSet.has(char)) {
-    return toSnakeCase(char.replace(/_/g, (s) => `:${s}`));
-  }
-
-  return toSnakeCase(char);
-};
+export const TransformCSSPropSet = new Set<string>([]);
