@@ -2089,6 +2089,8 @@ __metadata:
 "@damons-ui/css-core@workspace:^, @damons-ui/css-core@workspace:packages/core/css":
   version: 0.0.0-use.local
   resolution: "@damons-ui/css-core@workspace:packages/core/css"
+  dependencies:
+    csstype: ^3.1.2
   languageName: unknown
   linkType: soft
 

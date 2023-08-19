@@ -3370,7 +3370,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ["workspace:packages/core/css", {\
           "packageLocation": "./packages/core/css/",\
           "packageDependencies": [\
-            ["@damons-ui/css-core", "workspace:packages/core/css"]\
+            ["@damons-ui/css-core", "workspace:packages/core/css"],\
+            ["csstype", "npm:3.1.2"]\
           ],\
           "linkType": "SOFT"\
         }]\
