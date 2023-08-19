@@ -9,7 +9,7 @@ export type ComponentBaseCSS = Omit<
  * NOTE: 다음은 기본적으로 -를 한 번 더 붙이도록 transform 시켜야 한다.
  * moz
  * khtml
- *webkit
+ * webkit
  * ms
  *
  */
