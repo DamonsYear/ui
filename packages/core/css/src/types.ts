@@ -153,8 +153,8 @@ export type AdvancedPseudosPropKeys =
   | "_nth-of-type"
   | "_where";
 
-export type ComponentPseudoCSS = ComponentBaseCSS & {
+export type PseudosCSSProps = {
   [P in PseudoPropKeys]?: ComponentBaseCSS;
 };
 
-export type CSSProps = ComponentBaseCSS & ComponentPseudoCSS;
+export type CSSProps = ComponentBaseCSS & PseudosCSSProps;
