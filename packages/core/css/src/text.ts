@@ -25,6 +25,9 @@ export type TextCSSProps = Pick<
   | "textDecorationThickness"
   | "textAnchor"
   | "verticalAlign"
+  | "lineBreak"
+  | "lineClamp"
+  | "lineHeightStep"
 >;
 
 /**
@@ -55,4 +58,7 @@ export const TextCSSPropSet = new Set<string>([
   "textDecorationThickness",
   "textAnchor",
   "verticalAlign",
+  "lineBreak",
+  "lineClamp",
+  "lineHeightStep",
 ]);

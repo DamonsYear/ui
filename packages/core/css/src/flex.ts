@@ -17,6 +17,7 @@ export type FlexCSSProps = Pick<
   | "flexGrow"
   | "flexShrink"
   | "flexWrap"
+  | "gap"
 >;
 
 export const FlexPropSet = new Set<string>([
@@ -35,4 +36,5 @@ export const FlexPropSet = new Set<string>([
   "flexGrow",
   "flexShrink",
   "flexWrap",
+  "gap",
 ]);
