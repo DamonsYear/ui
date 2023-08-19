@@ -20,6 +20,7 @@ export type BoxModel = Pick<
   | "borderColor"
   | "borderStyle"
   | "borderRadius"
+  | "aspectRatio" // set size by ratio
 >;
 
 export const BoxModelCSSPropSet = new Set<string>([
