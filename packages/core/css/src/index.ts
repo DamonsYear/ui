@@ -5,3 +5,4 @@ export * from "./set";
 export * from "./text";
 export * from "./box";
 export * from "./position";
+export * from "./flex";
