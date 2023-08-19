@@ -1,3 +1,5 @@
+import { AdvancedPseudoSet, BasePseudoSet } from "./set";
+
 export const getPrefixDash = (s: string) => `-${s.toLowerCase()}`;
 
 const OneDashPrefixList = ["moz", "khtml", "webkit", "ms"];
@@ -8,4 +10,12 @@ export const toSnakeCase = (char: string) => {
   }
 
   return char.replace(/[A-Z]/g, getPrefixDash);
+};
+
+export const transformStyleProp = (char: string) => {
+  if (BasePseudoSet.has(char) || AdvancedPseudoSet.has(char)) {
+    return toSnakeCase(char.replace(/_/g, (s) => `:${s}`));
+  }
+
+  return toSnakeCase(char);
 };
