@@ -4,7 +4,11 @@ export type BoxModel = Pick<
   CSSProps,
   | "boxSizing"
   | "width" // size
+  | "minWidth"
+  | "maxWidth"
   | "height"
+  | "minHeight"
+  | "maxHeight"
   | "padding" // padding
   | "paddingTop"
   | "paddingRight"
@@ -25,8 +29,13 @@ export type BoxModel = Pick<
 
 export const BoxModelCSSPropSet = new Set<string>([
   "boxSizing",
+
   "width",
+  "minWidth",
+  "maxWidth",
   "height",
+  "minHeight",
+  "maxHeight",
 
   "padding",
   "paddingTop",

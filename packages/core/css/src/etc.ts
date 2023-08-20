@@ -1,8 +1,7 @@
 import { CSSProps } from "./types";
 
-export type DefaultCSSProps = Pick<
+export type OtherCSSProps = Pick<
   CSSProps,
-  | "display"
   | "appearance"
   | "content"
   | "outline"
@@ -32,8 +31,7 @@ export type DefaultCSSProps = Pick<
   | "cursor"
 >;
 
-export const DefaultCSSPropSet = new Set<string>([
-  "display",
+export const OtherCSSPropSet = new Set<string>([
   "appearance",
   "content",
   "outline",
