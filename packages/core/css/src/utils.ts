@@ -19,3 +19,7 @@ export const transformStyleProp = (char: string) => {
 
   return toSnakeCase(char);
 };
+
+export const union = (...args: Set<string>[]) => {
+  return new Set(args.map((arg) => [...arg]).flat());
+};
