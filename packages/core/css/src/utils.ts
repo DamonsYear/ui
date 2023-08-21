@@ -1,4 +1,4 @@
-import { AdvancedPseudoSet, BasePseudoSet } from "./set";
+import { AdvancedPseudoSet, BasePseudoSet } from "./pseudo";
 
 export const getPrefixDash = (s: string) => `-${s.toLowerCase()}`;
 
