@@ -5,7 +5,7 @@ export type PositionCSSProps = Pick<
   "position" | "top" | "right" | "bottom" | "left" | "zIndex"
 >;
 
-export const PositionPropSet = new Set<string>([
+export const PositionCSSPropSet = new Set<string>([
   "position",
   "top",
   "right",

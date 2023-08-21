@@ -20,7 +20,7 @@ export type FlexCSSProps = Pick<
   | "gap"
 >;
 
-export const FlexPropSet = new Set<string>([
+export const FlexCSSPropSet = new Set<string>([
   "justifyContent",
   "justifyItems",
   "justifySelf",

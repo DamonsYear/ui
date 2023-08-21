@@ -3371,7 +3371,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/core/css/",\
           "packageDependencies": [\
             ["@damons-ui/css-core", "workspace:packages/core/css"],\
-            ["csstype", "npm:3.1.2"]\
+            ["csstype", "npm:3.1.2"],\
+            ["tsconfig", "workspace:packages/tsconfig"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -3455,6 +3456,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/core/react/",\
           "packageDependencies": [\
             ["@damons-ui/react-core", "workspace:packages/core/react"],\
+            ["@damons-ui/css-core", "workspace:packages/core/css"],\
             ["@types/react", "npm:18.2.7"],\
             ["@types/react-dom", "npm:18.2.4"],\
             ["@typescript-eslint/eslint-plugin", "virtual:96fa76d92eedff6af588f029a7f8613f1592daef1b44dbd39ade9b8d981aeed3e90feea0b9601d361960f86f381889a69c64fdbb94b8095f910962897edc2245#npm:5.59.8"],\

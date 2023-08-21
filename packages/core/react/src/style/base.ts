@@ -1,5 +1,50 @@
 import { css } from "css-in-js";
 import { CSSProps } from "./types";
+import {
+  BgCSSPropSet,
+  BoxModelCSSPropSet,
+  FilterCSSPropSet,
+  FlexCSSPropSet,
+  ImgCSSPropSet,
+  LayoutCSSPropSet,
+  OtherCSSPropSet,
+  OverflowCSSPropSet,
+  PositionCSSPropSet,
+  TextCSSPropSet,
+  TransformCSSPropSet,
+  TransitionCSSPropSet,
+  VisibilityCSSPropSet,
+  transformStyleProp,
+  union,
+} from "@damons-ui/css-core";
+
+export const basePropsCSS = (props: CSSProps) => css<CSSProps>`
+  ${Object.keys(props)
+    .filter(
+      (propKey) =>
+        union(
+          BgCSSPropSet,
+          ImgCSSPropSet,
+          OtherCSSPropSet,
+          LayoutCSSPropSet,
+          FlexCSSPropSet,
+          PositionCSSPropSet,
+          TextCSSPropSet,
+          FilterCSSPropSet,
+          BoxModelCSSPropSet,
+          OverflowCSSPropSet,
+          TextCSSPropSet,
+          TransformCSSPropSet,
+          TransitionCSSPropSet,
+          VisibilityCSSPropSet
+        ).has(propKey) && props[propKey as keyof CSSProps] !== undefined
+    )
+    .map(
+      (propKey) =>
+        `${[transformStyleProp(propKey)]}: ${props[propKey as keyof CSSProps]};`
+    )
+    .join("")}
+`;
 
 export const baseCSS = (props: CSSProps) => css<CSSProps>`
   box-sizing: ${props.boxSizing};

@@ -10,3 +10,8 @@ export * from "./transition";
 export * from "./transform";
 export * from "./etc";
 export * from "./layout";
+export * from "./bg";
+export * from "./img";
+export * from "./filter";
+export * from "./overflow-css";
+export * from "./visibility";
