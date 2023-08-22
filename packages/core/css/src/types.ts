@@ -13,7 +13,7 @@ export type ComponentBaseCSS = Omit<
  * ms
  *
  */
-export type PseudoPropKeys = BasePseudosPropKeys & AdvancedPseudosPropKeys;
+export type PseudoPropKeys = BasePseudosPropKeys | AdvancedPseudosPropKeys;
 
 export type BasePseudosPropKeys =
   | "_khtml-any-link"
@@ -58,9 +58,7 @@ export type BasePseudosPropKeys =
   | "__webkit-progress-value"
   | "__webkit-slider-runnable-track"
   | "__webkit-slider-thumb"
-  | "__after"
   | "__backdrop"
-  | "__before"
   | "__cue"
   | "__cue-region"
   | "__first-letter"
