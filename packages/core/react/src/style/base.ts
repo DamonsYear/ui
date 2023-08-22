@@ -18,26 +18,27 @@ import {
   union,
 } from "@damons-ui/css-core";
 
+const styleSet = union(
+  BgCSSPropSet,
+  ImgCSSPropSet,
+  OtherCSSPropSet,
+  LayoutCSSPropSet,
+  FlexCSSPropSet,
+  PositionCSSPropSet,
+  TextCSSPropSet,
+  FilterCSSPropSet,
+  BoxModelCSSPropSet,
+  OverflowCSSPropSet,
+  TextCSSPropSet,
+  TransformCSSPropSet,
+  TransitionCSSPropSet,
+  VisibilityCSSPropSet
+);
 export const basePropsCSS = (props: CSSProps) => css<CSSProps>`
   ${Object.keys(props)
     .filter(
       (propKey) =>
-        union(
-          BgCSSPropSet,
-          ImgCSSPropSet,
-          OtherCSSPropSet,
-          LayoutCSSPropSet,
-          FlexCSSPropSet,
-          PositionCSSPropSet,
-          TextCSSPropSet,
-          FilterCSSPropSet,
-          BoxModelCSSPropSet,
-          OverflowCSSPropSet,
-          TextCSSPropSet,
-          TransformCSSPropSet,
-          TransitionCSSPropSet,
-          VisibilityCSSPropSet
-        ).has(propKey) && props[propKey as keyof CSSProps] !== undefined
+        styleSet.has(propKey) && props[propKey as keyof CSSProps] !== undefined
     )
     .map(
       (propKey) =>
@@ -45,6 +46,8 @@ export const basePropsCSS = (props: CSSProps) => css<CSSProps>`
     )
     .join("")}
 `;
+
+export const getStyledConfig = (prop: string) => !styleSet.has(prop);
 
 export const baseCSS = (props: CSSProps) => css<CSSProps>`
   box-sizing: ${props.boxSizing};
