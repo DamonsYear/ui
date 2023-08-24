@@ -1,6 +1,7 @@
 "use client";
 
 import Box from "@damons-ui/box";
+import { Button } from "@damons-ui/button";
 import { FixedToast } from "@damons-ui/toast";
 import styled from "css-in-js";
 import { useState } from "react";
@@ -26,6 +27,18 @@ export default function Page() {
         Hello World!
         <Div>HEllo...</Div>
         <button onClick={onToggle}>CLICK</button>
+        <Button background="#124215">CLICK!!!</Button>
+        <Button background="red">CLICK!!!</Button>
+        <Button
+          background="purple"
+          cursor="pointer"
+          _hover={{
+            background: "sky",
+            marginLeft: "10px",
+          }}
+        >
+          CLICK!!!!!
+        </Button>
       </Box>
       <FixedToast
         isActive={isActive}

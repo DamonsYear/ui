@@ -7,7 +7,8 @@ export type ComponentBaseCSS = Omit<
   CSS.Properties<string | number>,
   "translate"
 >;
-export type ComponentPseudoCSS = ComponentBaseCSS & {
+
+export type ComponentPseudoCSS = {
   [P in PseudosPropKey]?: ComponentBaseCSS;
 };
 

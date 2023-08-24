@@ -1,6 +1,10 @@
 import { css } from "css-in-js";
 import { CSSProps } from "./types";
 import {
+  AdvancedPseudoSet,
+  AdvancedPseudosPropKeys,
+  BasePseudoSet,
+  BasePseudosPropKeys,
   BgCSSPropSet,
   BoxModelCSSPropSet,
   FilterCSSPropSet,
@@ -17,6 +21,8 @@ import {
   transformStyleProp,
   union,
 } from "@damons-ui/css-core";
+import { pseudoPropsCSS } from "./pseudo";
+import { Pseudos } from "csstype";
 
 const styleSet = union(
   BgCSSPropSet,
@@ -38,12 +44,25 @@ export const basePropsCSS = (props: CSSProps) => css<CSSProps>`
   ${Object.keys(props)
     .filter(
       (propKey) =>
-        styleSet.has(propKey) && props[propKey as keyof CSSProps] !== undefined
+        union(styleSet, BasePseudoSet, AdvancedPseudoSet).has(propKey) &&
+        props[propKey as keyof CSSProps] !== undefined
     )
-    .map(
-      (propKey) =>
-        `${[transformStyleProp(propKey)]}: ${props[propKey as keyof CSSProps]};`
-    )
+    .map((propKey) => {
+      const value = props[propKey as keyof CSSProps] as CSSProps;
+
+      console.log(propKey);
+      if (
+        union(BasePseudoSet, AdvancedPseudoSet).has(
+          propKey as AdvancedPseudosPropKeys | BasePseudosPropKeys
+        )
+      ) {
+        return pseudoPropsCSS(value, transformStyleProp(propKey) as Pseudos);
+      }
+
+      if (!value) return "";
+
+      return `${transformStyleProp(propKey)}: ${value};`;
+    })
     .join("")}
 `;
 

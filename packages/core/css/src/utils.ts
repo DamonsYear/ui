@@ -1,4 +1,5 @@
 import { AdvancedPseudoSet, BasePseudoSet } from "./pseudo";
+import { AdvancedPseudosPropKeys, BasePseudosPropKeys } from "./types";
 
 export const getPrefixDash = (s: string) => `-${s.toLowerCase()}`;
 
@@ -12,14 +13,21 @@ export const toSnakeCase = (char: string) => {
   return char.replace(/[A-Z]/g, getPrefixDash);
 };
 
-export const transformStyleProp = (char: string) => {
-  if (BasePseudoSet.has(char) || AdvancedPseudoSet.has(char)) {
-    return toSnakeCase(char.replace(/_/g, (s) => `:${s}`));
+export const union = <SetKey extends string>(...args: Set<SetKey>[]) => {
+  return new Set(args.map((arg) => [...arg]).flat());
+};
+
+export const transformStyleProp = (
+  char: string | BasePseudosPropKeys | AdvancedPseudosPropKeys
+) => {
+  if (
+    union(BasePseudoSet, AdvancedPseudoSet).has(
+      char as BasePseudosPropKeys | AdvancedPseudosPropKeys
+    )
+  ) {
+    console.log(":)", toSnakeCase(char.replace(/_/g, ":")));
+    return toSnakeCase(char.replace(/_/g, ":"));
   }
 
   return toSnakeCase(char);
-};
-
-export const union = (...args: Set<string>[]) => {
-  return new Set(args.map((arg) => [...arg]).flat());
 };
