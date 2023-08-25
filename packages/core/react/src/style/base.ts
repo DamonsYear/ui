@@ -49,7 +49,6 @@ export const basePropsCSS = (props: CSSProps) => css<CSSProps>`
         props[propKey as keyof CSSProps] !== undefined
     )
     .map((propKey) => {
-      console.log(propKey);
       const value = props[propKey as keyof CSSProps] as CSSProps;
 
       if (
@@ -57,9 +56,6 @@ export const basePropsCSS = (props: CSSProps) => css<CSSProps>`
           propKey as AdvancedPseudosPropKeys | BasePseudosPropKeys
         )
       ) {
-        console.log(
-          pseudoPropsCSS(value, transformStyleProp(propKey) as Pseudos)
-        );
         return pseudoPropsCSS(value, transformStyleProp(propKey) as Pseudos);
       }
 

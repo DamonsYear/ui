@@ -25,7 +25,6 @@ export const transformStyleProp = (
       char as BasePseudosPropKeys | AdvancedPseudosPropKeys
     )
   ) {
-    console.log(":)", toSnakeCase(char.replace(/_/g, ":")));
     return toSnakeCase(char.replace(/_/g, ":"));
   }
 
