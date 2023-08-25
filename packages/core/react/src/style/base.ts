@@ -24,7 +24,7 @@ import {
 import { pseudoPropsCSS } from "./pseudo";
 import { Pseudos } from "csstype";
 
-const styleSet = union(
+export const styleSet = union(
   BgCSSPropSet,
   ImgCSSPropSet,
   OtherCSSPropSet,
@@ -40,6 +40,7 @@ const styleSet = union(
   TransitionCSSPropSet,
   VisibilityCSSPropSet
 );
+
 export const basePropsCSS = (props: CSSProps) => css<CSSProps>`
   ${Object.keys(props)
     .filter(
@@ -48,22 +49,24 @@ export const basePropsCSS = (props: CSSProps) => css<CSSProps>`
         props[propKey as keyof CSSProps] !== undefined
     )
     .map((propKey) => {
+      console.log(propKey);
       const value = props[propKey as keyof CSSProps] as CSSProps;
 
-      console.log(propKey);
       if (
         union(BasePseudoSet, AdvancedPseudoSet).has(
           propKey as AdvancedPseudosPropKeys | BasePseudosPropKeys
         )
       ) {
+        console.log(
+          pseudoPropsCSS(value, transformStyleProp(propKey) as Pseudos)
+        );
         return pseudoPropsCSS(value, transformStyleProp(propKey) as Pseudos);
       }
 
       if (!value) return "";
 
       return `${transformStyleProp(propKey)}: ${value};`;
-    })
-    .join("")}
+    })}
 `;
 
 export const getStyledConfig = (prop: string) => !styleSet.has(prop);

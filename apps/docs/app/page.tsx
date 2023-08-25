@@ -31,9 +31,16 @@ export default function Page() {
         <Button background="red">CLICK!!!</Button>
         <Button
           background="purple"
-          cursor="pointer"
-          _hover={{
-            background: "sky",
+          _after={{
+            cursor: "pointer",
+            content: "",
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            zIndex: 1,
+            background: "#f22fff",
             marginLeft: "10px",
           }}
         >

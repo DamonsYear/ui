@@ -55,4 +55,8 @@ export const OtherCSSPropSet = new Set<string>([
   "breakInside",
   "caretColor",
   "colorScheme",
+  "colorAdjust",
+  "colorInterpolation",
+  "colorRendering",
+  "cursor",
 ]);
