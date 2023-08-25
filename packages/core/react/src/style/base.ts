@@ -59,7 +59,7 @@ export const basePropsCSS = (props: CSSProps) => css<CSSProps>`
         return pseudoPropsCSS(value, transformStyleProp(propKey) as Pseudos);
       }
 
-      if (!value) return "";
+      if (value === undefined) return "";
 
       return `${transformStyleProp(propKey)}: ${value};`;
     })}
