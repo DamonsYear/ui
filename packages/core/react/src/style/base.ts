@@ -1,5 +1,71 @@
 import { css } from "css-in-js";
 import { CSSProps } from "./types";
+import {
+  AdvancedPseudoSet,
+  AdvancedPseudosPropKeys,
+  BasePseudoSet,
+  BasePseudosPropKeys,
+  BgCSSPropSet,
+  BoxModelCSSPropSet,
+  FilterCSSPropSet,
+  FlexCSSPropSet,
+  ImgCSSPropSet,
+  LayoutCSSPropSet,
+  OtherCSSPropSet,
+  OverflowCSSPropSet,
+  PositionCSSPropSet,
+  TextCSSPropSet,
+  TransformCSSPropSet,
+  TransitionCSSPropSet,
+  VisibilityCSSPropSet,
+  transformStyleProp,
+  union,
+} from "@damons-ui/css-core";
+import { pseudoPropsCSS } from "./pseudo";
+import { Pseudos } from "csstype";
+
+export const styleSet = union(
+  BgCSSPropSet,
+  ImgCSSPropSet,
+  OtherCSSPropSet,
+  LayoutCSSPropSet,
+  FlexCSSPropSet,
+  PositionCSSPropSet,
+  TextCSSPropSet,
+  FilterCSSPropSet,
+  BoxModelCSSPropSet,
+  OverflowCSSPropSet,
+  TextCSSPropSet,
+  TransformCSSPropSet,
+  TransitionCSSPropSet,
+  VisibilityCSSPropSet
+);
+
+export const basePropsCSS = (props: CSSProps) => css<CSSProps>`
+  ${Object.keys(props)
+    .filter(
+      (propKey) =>
+        union(styleSet, BasePseudoSet, AdvancedPseudoSet).has(propKey) &&
+        props[propKey as keyof CSSProps] !== undefined
+    )
+    .map((propKey) => {
+      const value = props[propKey as keyof CSSProps] as CSSProps;
+
+      if (
+        union(BasePseudoSet, AdvancedPseudoSet).has(
+          propKey as AdvancedPseudosPropKeys | BasePseudosPropKeys
+        )
+      ) {
+        return pseudoPropsCSS(value, transformStyleProp(propKey) as Pseudos);
+      }
+
+      if (value === undefined) return "";
+
+      return `${transformStyleProp(propKey)}: ${value};`;
+    })}
+`;
+
+export const getStyledConfig = (prop: string) => !styleSet.has(prop);
 
 export const baseCSS = (props: CSSProps) => css<CSSProps>`
   box-sizing: ${props.boxSizing};
