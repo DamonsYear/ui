@@ -5,7 +5,7 @@ export const getPrefixDash = (s: string) => `-${s.toLowerCase()}`;
 
 const OneDashPrefixList = ["moz", "khtml", "webkit", "ms"];
 
-export const toSnakeCase = (char: string) => {
+export const transformPseudoSelector = (char: string) => {
   if (OneDashPrefixList.some((testCase) => char.startsWith(testCase))) {
     return getPrefixDash(char).replace(/[A-Z]/g, getPrefixDash);
   }
@@ -25,8 +25,8 @@ export const transformStyleProp = (
       char as BasePseudosPropKeys | AdvancedPseudosPropKeys
     )
   ) {
-    return toSnakeCase(char.replace(/_/g, ":"));
+    return transformPseudoSelector(char.replace(/_/g, ":"));
   }
 
-  return toSnakeCase(char);
+  return transformPseudoSelector(char);
 };
