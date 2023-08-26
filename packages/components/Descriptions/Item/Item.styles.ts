@@ -1,6 +1,6 @@
 import styled from "css-in-js";
 import { TInitialDescriptionsState } from "../Container/Container.context";
-import { CSSProps } from "@damons-ui/react-core";
+import { CSSProps, basePropsCSS } from "@damons-ui/react-core";
 
 export type TItemContainerProps = {
   layout: TInitialDescriptionsState["layout"];
@@ -13,6 +13,8 @@ export const ItemContainer = styled.section<TItemContainerProps>`
   width: ${(props) => props.width};
 
   border-left: 1px solid ${(props) => props.borderColor};
+
+  ${basePropsCSS}
 `;
 
 export type TItemLabelProps = {
@@ -34,6 +36,8 @@ export const Label = styled.header<TItemLabelProps>`
 
   border-right: 1px solid ${(props) => props.borderColor};
   border-bottom: 1px solid ${(props) => props.borderColor};
+
+  ${basePropsCSS}
 `;
 
 export type TItemContentProps = {
@@ -51,4 +55,6 @@ export const Content = styled.div<TItemContentProps>`
 
   border-right: 1px solid ${(props) => props.borderColor};
   border-bottom: 1px solid ${(props) => props.borderColor};
+
+  ${basePropsCSS}
 `;
