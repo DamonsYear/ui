@@ -1,6 +1,7 @@
 "use client";
 
 import { FixedToast, Toasts, useToast } from "@damons-ui/toast";
+import Image from "next/image";
 
 import { useEffect, useState } from "react";
 
@@ -12,7 +13,11 @@ export default function Page() {
   useEffect(() => {
     add("1", {
       message: "토스트입니다!",
-      icon: <div>ICON</div>,
+      icon: <Image src="/success.svg" alt="info" width={24} height={24} />,
+    });
+    add("2", {
+      message: "토스트2입니다!",
+      icon: <Image src="/info.svg" alt="info" width={24} height={24} />,
     });
   }, [add]);
 
