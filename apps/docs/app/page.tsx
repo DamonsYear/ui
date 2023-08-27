@@ -1,21 +1,20 @@
 "use client";
 
-import Box from "@damons-ui/box";
-import { Button } from "@damons-ui/button";
-import { FixedToast } from "@damons-ui/toast";
-import styled from "css-in-js";
-import { useState } from "react";
+import { FixedToast, Toasts, useToast } from "@damons-ui/toast";
 
-const Div = styled.div`
-  color: red;
-  background-color: #111;
-`;
+import { useEffect, useState } from "react";
+
 export default function Page() {
   const [isActive, setIsActive] = useState(false);
 
-  const onToggle = () => {
-    setIsActive((state) => !state);
-  };
+  const { add } = useToast();
+
+  useEffect(() => {
+    add("1", {
+      message: "토스트입니다!",
+      icon: <div>ICON</div>,
+    });
+  }, [add]);
 
   const onClose = () => {
     setIsActive(false);
@@ -23,34 +22,15 @@ export default function Page() {
 
   return (
     <>
-      <Box color="#fb0" background="#333">
-        Hello World!
-        <Div>HEllo...</Div>
-        <button onClick={onToggle}>CLICK</button>
-        <Button background="#124215">CLICK!!!</Button>
-        <Button background="red">CLICK!!!</Button>
-        <Button
-          color="white"
-          position="relative"
-          background="purple"
-          _after={{
-            cursor: "pointer",
-            content: "",
-            position: "fixed",
-            width: "100%",
-            height: "100%",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            zIndex: 1,
-            background: "white",
-            marginLeft: "10px",
-          }}
-        >
-          CLIC2K!!!!!
-        </Button>
-      </Box>
+      <Toasts direction="top" />
+      <Toasts direction="topRight" />
+      <Toasts direction="topLeft" />
+      <Toasts direction="left" />
+      <Toasts direction="right" />
+      <Toasts direction="bottom" />
+      <Toasts direction="bottomLeft" />
+      <Toasts direction="bottomRight" />
+
       <FixedToast
         isActive={isActive}
         backgroundColor="#123467"

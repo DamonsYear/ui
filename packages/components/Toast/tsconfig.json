@@ -1,6 +1,7 @@
 {
   "extends": "tsconfig/react-library.json",
   "compilerOptions": {
+    "target": "ESNext",
     "rootDir": ".",
     // 일반적으로 소스 파일로 무시되기 때문에,
     // TypeScript가 JS 파일을 읽도록 지시합니다.
