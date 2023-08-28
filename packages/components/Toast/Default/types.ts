@@ -12,6 +12,7 @@ export type TToastStoreState = {
 export type TToast = {
   message: string;
   icon: "info" | "error" | "success" | ReactNode;
+  timerId: number;
 } & CSSProps;
 
 export type Directions =

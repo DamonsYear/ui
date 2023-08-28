@@ -13,7 +13,7 @@ export const Toasts = ({
   direction = "top",
   ...props
 }: { direction: Directions } & PropsWithChildren) => {
-  const { toasts, updateDirection } = useToast();
+  const { toasts, remove, updateDirection } = useToast();
 
   useEffect(() => {
     updateDirection(direction);
@@ -21,10 +21,11 @@ export const Toasts = ({
 
   return (
     <Toasts.Container direction={direction} {...props}>
-      {[...toasts].map(([key, toast]) => (
-        <Toasts.Item key={key} direction={direction}>
+      {[...toasts].map(([id, toast]) => (
+        <Toasts.Item key={id} direction={direction}>
           {toast.icon}
           {toast.message}
+          <button onClick={() => remove(id)}>❌</button>
         </Toasts.Item>
       ))}
     </Toasts.Container>

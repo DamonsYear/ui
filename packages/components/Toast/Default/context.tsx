@@ -20,16 +20,26 @@ export const ToastProvider = ({ children }: PropsWithChildren) => {
   const [direction, setDirection] = useState<Directions>("top");
 
   const add: TToastStoreState["add"] = (id, toast) => {
-    setToasts((state) => new Map(state.set(id, toast)));
+    const timerId = setTimeout(() => {
+      remove(id);
+    }, 5000);
+
+    setToasts((state) => new Map(state.set(id, { ...toast, timerId })));
   };
 
   const remove: TToastStoreState["remove"] = (id) => {
+    const toast = toasts.get(id);
+
+    if (!toast) return;
+
     setToasts((state) => {
       const nextState = new Map(state);
       nextState.delete(id);
 
       return nextState;
     });
+
+    clearTimeout(toast.timerId);
   };
 
   const clear = () => {

@@ -3,23 +3,23 @@
 import { FixedToast, Toasts, useToast } from "@damons-ui/toast";
 import Image from "next/image";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
+
+import { v4 as uuidv4 } from "uuid";
 
 export default function Page() {
   const [isActive, setIsActive] = useState(false);
 
   const { add } = useToast();
 
-  useEffect(() => {
-    add("1", {
-      message: "토스트입니다!",
+  const onAddToast = () => {
+    const id = uuidv4();
+
+    add(id, {
+      message: id,
       icon: <Image src="/success.svg" alt="info" width={24} height={24} />,
     });
-    add("2", {
-      message: "토스트2입니다!",
-      icon: <Image src="/info.svg" alt="info" width={24} height={24} />,
-    });
-  }, [add]);
+  };
 
   const onClose = () => {
     setIsActive(false);
@@ -29,12 +29,16 @@ export default function Page() {
     <>
       <Toasts direction="top" />
       <Toasts direction="topRight" />
-      <Toasts direction="topLeft" />
+      {/* <Toasts direction="topLeft" /> */}
       <Toasts direction="left" />
       <Toasts direction="right" />
       <Toasts direction="bottom" />
       <Toasts direction="bottomLeft" />
       <Toasts direction="bottomRight" />
+
+      <button onClick={onAddToast} style={{ zIndex: 100000000 }}>
+        CLICK
+      </button>
 
       <FixedToast
         isActive={isActive}
