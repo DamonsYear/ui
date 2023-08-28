@@ -29,14 +29,17 @@ export default function Page() {
     <>
       <Toasts direction="top" />
       <Toasts direction="topRight" />
-      {/* <Toasts direction="topLeft" /> */}
+      <Toasts direction="topLeft" />
       <Toasts direction="left" />
       <Toasts direction="right" />
       <Toasts direction="bottom" />
       <Toasts direction="bottomLeft" />
       <Toasts direction="bottomRight" />
 
-      <button onClick={onAddToast} style={{ zIndex: 100000000 }}>
+      <button
+        onClick={onAddToast}
+        style={{ position: "relative", zIndex: 100000000 }}
+      >
         CLICK
       </button>
 
