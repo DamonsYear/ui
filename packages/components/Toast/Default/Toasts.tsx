@@ -32,7 +32,7 @@ export const Toasts = ({
     <LazyMotion features={domAnimation}>
       <Toasts.Container direction={direction} {...props}>
         <AnimatePresence>
-          {[...toasts].map(([id, toast]) => (
+          {[...toasts].map(([id, toast], index) => (
             <Toasts.Item
               key={id}
               direction={direction}
@@ -40,11 +40,12 @@ export const Toasts = ({
               initial="initial"
               animate="animate"
               exit="exit"
+              zIndex={index}
             >
               {toast.icon}
               {toast.message}
 
-              <button onClick={() => remove(id)}>❌2</button>
+              <button onClick={() => remove(id)}>❌</button>
             </Toasts.Item>
           ))}
         </AnimatePresence>

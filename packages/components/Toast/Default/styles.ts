@@ -156,6 +156,7 @@ export const Container = styled.div<ToastsContainerStyledProps>`
           transform: translateY(-50%);
         `;
       }
+
       case "topLeft": {
         return css`
           display: flex;
@@ -164,6 +165,7 @@ export const Container = styled.div<ToastsContainerStyledProps>`
           left: 0;
         `;
       }
+
       case "topRight": {
         return css`
           display: flex;
@@ -199,6 +201,7 @@ export const Container = styled.div<ToastsContainerStyledProps>`
           left: 0;
         `;
       }
+
       case "bottom": {
         return css`
           display: flex;
@@ -208,6 +211,7 @@ export const Container = styled.div<ToastsContainerStyledProps>`
           transform: translateX(-50%);
         `;
       }
+
       case "bottomRight": {
         return css`
           display: flex;
@@ -225,6 +229,12 @@ export const Container = styled.div<ToastsContainerStyledProps>`
 `;
 
 export const Item = styled.div<ToastsContainerStyledProps>`
+  position: absolute;
+
+  &:first-of-type {
+    position: relative;
+  }
+
   box-sizing: border-box;
 
   display: flex;
@@ -238,7 +248,7 @@ export const Item = styled.div<ToastsContainerStyledProps>`
   box-shadow: 0px 3px 4px 2px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
 
-  ${basePropsCSS}
+  background-color: #fff;
 
   img {
     margin-right: 8px;
@@ -247,25 +257,69 @@ export const Item = styled.div<ToastsContainerStyledProps>`
   color: #333;
   font-size: 14px;
 
+  ${basePropsCSS}
+
   ${(props) => {
     if (!props.direction) return;
 
     switch (props.direction) {
-      case "top":
-      case "topLeft":
-      case "topRight":
-      case "left":
-      case "right": {
+      case "top": {
         return css`
+          top: 0;
+          left: 0;
           margin-top: 12px;
         `;
       }
+      case "topLeft": {
+        return css`
+          top: 0;
+          left: 0;
+          margin-top: 12px;
+          margin-left: 12px;
+        `;
+      }
+      case "topRight": {
+        return css`
+          top: 0;
+          right: 0;
+          margin-top: 12px;
+          margin-right: 12px;
+        `;
+      }
+      case "left": {
+        return css`
+          left: 0;
+          margin-left: 12px;
+        `;
+      }
 
-      case "bottom":
-      case "bottomLeft":
+      case "right": {
+        return css`
+          right: 0;
+          margin-right: 12px;
+        `;
+      }
+
+      case "bottom": {
+        return css`
+          bottom: 0;
+          margin-bottom: 12px;
+        `;
+      }
+      case "bottomLeft": {
+        return css`
+          bottom: 0;
+          left: 0;
+          margin-bottom: 12px;
+          margin-left: 12px;
+        `;
+      }
       case "bottomRight": {
         return css`
+          bottom: 0;
+          right: 0;
           margin-bottom: 12px;
+          margin-right: 12px;
         `;
       }
 

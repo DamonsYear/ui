@@ -22,7 +22,7 @@ export const ToastProvider = ({ children }: PropsWithChildren) => {
   const add: TToastStoreState["add"] = (id, toast) => {
     const timerId = setTimeout(() => {
       remove(id);
-    }, 5000);
+    }, 1000);
 
     setToasts((state) => new Map(state.set(id, { ...toast, timerId })));
   };
