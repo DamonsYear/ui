@@ -5,7 +5,7 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import { AnimationDirection, Directions, TToastStoreState } from "./types";
+import { TToastStoreState } from "./types";
 
 const ToastContext = createContext<TToastStoreState>({
   toasts: new Map(),
@@ -27,20 +27,14 @@ const ToastContext = createContext<TToastStoreState>({
 export const ToastProvider = ({ children }: PropsWithChildren) => {
   const [toasts, setToasts] = useState<TToastStoreState["toasts"]>(new Map());
 
-  const [toastHeight, setToastHeight] = useState<string>("0px");
+  const [toastHeight, setToastHeight] =
+    useState<TToastStoreState["toastHeight"]>("0px");
 
-  const [direction, setDirection] = useState<Directions>("top");
+  const [direction, setDirection] =
+    useState<TToastStoreState["direction"]>("top");
 
   const [animationDirection, setAnimationDirection] =
-    useState<AnimationDirection>("topToBottom");
-
-  const updateToastHeight = (height: string) => {
-    setToastHeight(height);
-  };
-
-  const updateToastAnimationDirection = (direction: AnimationDirection) => {
-    setAnimationDirection(direction);
-  };
+    useState<TToastStoreState["animationDirection"]>("topToBottom");
 
   const add: TToastStoreState["add"] = (id, toast) => {
     const timerId = setTimeout(() => {
@@ -65,13 +59,22 @@ export const ToastProvider = ({ children }: PropsWithChildren) => {
     clearTimeout(toast.timerId);
   };
 
-  const clear = () => {
+  const clear: TToastStoreState["clear"] = () => {
     setToasts(new Map());
   };
 
   const updateDirection: TToastStoreState["updateDirection"] = (value) => {
     setDirection(value);
   };
+
+  const updateToastHeight: TToastStoreState["updateToastHeight"] = (height) => {
+    setToastHeight(height);
+  };
+
+  const updateToastAnimationDirection: TToastStoreState["updateToastAnimationDirection"] =
+    (direction) => {
+      setAnimationDirection(direction);
+    };
 
   const value = useMemo(
     () => ({
