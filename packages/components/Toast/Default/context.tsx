@@ -12,12 +12,20 @@ const ToastContext = createContext<TToastStoreState>({
   add: () => {},
   remove: () => {},
   clear: () => {},
+  direction: "top",
   updateDirection: () => {},
+  updateToastHeight: () => {},
+  toastHeight: "0px",
 });
 
 export const ToastProvider = ({ children }: PropsWithChildren) => {
   const [toasts, setToasts] = useState<TToastStoreState["toasts"]>(new Map());
+  const [toastHeight, setToastHeight] = useState<string>("0px");
   const [direction, setDirection] = useState<Directions>("top");
+
+  const updateToastHeight = (height: string) => {
+    setToastHeight(height);
+  };
 
   const add: TToastStoreState["add"] = (id, toast) => {
     const timerId = setTimeout(() => {
@@ -58,8 +66,19 @@ export const ToastProvider = ({ children }: PropsWithChildren) => {
       toasts,
       direction,
       updateDirection,
+      updateToastHeight,
+      toastHeight,
     }),
-    [toasts, add, remove, clear]
+    [
+      toasts,
+      add,
+      remove,
+      clear,
+      direction,
+      updateDirection,
+      updateToastHeight,
+      toastHeight,
+    ]
   );
 
   return (

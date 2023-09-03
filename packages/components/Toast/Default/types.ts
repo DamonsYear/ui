@@ -13,6 +13,9 @@ export type TToastStoreState = {
   add: (id: string | number, toast: Omit<TToast, "timerId">) => void;
   remove: (id: string | number) => void;
   clear: () => void;
+  direction: Directions;
+  updateToastHeight: (height: string) => void;
+  toastHeight: string;
 };
 
 export type Directions =
