@@ -5,26 +5,41 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import { Directions, TToastStoreState } from "./types";
+import { AnimationDirection, Directions, TToastStoreState } from "./types";
 
 const ToastContext = createContext<TToastStoreState>({
   toasts: new Map(),
+
   add: () => {},
   remove: () => {},
   clear: () => {},
+
   direction: "top",
   updateDirection: () => {},
-  updateToastHeight: () => {},
+
   toastHeight: "0px",
+  updateToastHeight: () => {},
+
+  animationDirection: "topToBottom",
+  updateToastAnimationDirection: () => {},
 });
 
 export const ToastProvider = ({ children }: PropsWithChildren) => {
   const [toasts, setToasts] = useState<TToastStoreState["toasts"]>(new Map());
+
   const [toastHeight, setToastHeight] = useState<string>("0px");
+
   const [direction, setDirection] = useState<Directions>("top");
+
+  const [animationDirection, setAnimationDirection] =
+    useState<AnimationDirection>("topToBottom");
 
   const updateToastHeight = (height: string) => {
     setToastHeight(height);
+  };
+
+  const updateToastAnimationDirection = (direction: AnimationDirection) => {
+    setAnimationDirection(direction);
   };
 
   const add: TToastStoreState["add"] = (id, toast) => {
@@ -60,24 +75,36 @@ export const ToastProvider = ({ children }: PropsWithChildren) => {
 
   const value = useMemo(
     () => ({
+      toasts,
+
       add,
       remove,
       clear,
-      toasts,
+
       direction,
       updateDirection,
-      updateToastHeight,
+
       toastHeight,
+      updateToastHeight,
+
+      animationDirection,
+      updateToastAnimationDirection,
     }),
     [
       toasts,
+
       add,
       remove,
       clear,
+
       direction,
       updateDirection,
-      updateToastHeight,
+
       toastHeight,
+      updateToastHeight,
+
+      animationDirection,
+      updateToastAnimationDirection,
     ]
   );
 

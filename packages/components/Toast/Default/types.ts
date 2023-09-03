@@ -16,6 +16,8 @@ export type TToastStoreState = {
   direction: Directions;
   updateToastHeight: (height: string) => void;
   toastHeight: string;
+  animationDirection: AnimationDirection;
+  updateToastAnimationDirection: (direction: AnimationDirection) => void;
 };
 
 export type Directions =
@@ -27,3 +29,9 @@ export type Directions =
   | "bottom"
   | "bottomLeft"
   | "left";
+
+export type AnimationDirection =
+  | "bottomToTop"
+  | "topToBottom"
+  | "leftToRight"
+  | "rightToLeft";
