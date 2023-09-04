@@ -5,7 +5,7 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import { TToastStoreState } from "./types";
+import { TToastStoreState, ToastType } from "./types";
 
 const ToastContext = createContext<TToastStoreState>({
   toasts: new Map(),
@@ -22,9 +22,13 @@ const ToastContext = createContext<TToastStoreState>({
 
   animationDirection: "topToBottom",
   updateToastAnimationDirection: () => {},
+
+  updateType: () => {},
 });
 
 export const ToastProvider = ({ children }: PropsWithChildren) => {
+  const [type, setType] = useState<ToastType>("overlap");
+
   const [toasts, setToasts] = useState<TToastStoreState["toasts"]>(new Map());
 
   const [toastHeight, setToastHeight] =
@@ -35,6 +39,10 @@ export const ToastProvider = ({ children }: PropsWithChildren) => {
 
   const [animationDirection, setAnimationDirection] =
     useState<TToastStoreState["animationDirection"]>("topToBottom");
+
+  const updateType = (type: ToastType) => {
+    setType(type);
+  };
 
   const add: TToastStoreState["add"] = (id, toast) => {
     const timerId = setTimeout(() => {
@@ -92,6 +100,9 @@ export const ToastProvider = ({ children }: PropsWithChildren) => {
 
       animationDirection,
       updateToastAnimationDirection,
+
+      updateType,
+      type,
     }),
     [
       toasts,
@@ -108,6 +119,9 @@ export const ToastProvider = ({ children }: PropsWithChildren) => {
 
       animationDirection,
       updateToastAnimationDirection,
+
+      type,
+      updateType,
     ]
   );
 

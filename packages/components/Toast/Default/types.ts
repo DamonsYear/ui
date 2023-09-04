@@ -18,7 +18,10 @@ export type TToastStoreState = {
   toastHeight: string;
   animationDirection: AnimationDirection;
   updateToastAnimationDirection: (direction: AnimationDirection) => void;
+  updateType: (type: ToastType) => void;
 };
+
+export type ToastType = "stack" | "overlap";
 
 export type Directions =
   | "top"
