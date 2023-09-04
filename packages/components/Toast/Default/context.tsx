@@ -23,6 +23,7 @@ const ToastContext = createContext<TToastStoreState>({
   animationDirection: "topToBottom",
   updateToastAnimationDirection: () => {},
 
+  type: "overlap",
   updateType: () => {},
 });
 

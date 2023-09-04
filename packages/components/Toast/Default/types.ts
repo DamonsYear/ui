@@ -1,5 +1,5 @@
 import { CSSProps } from "@damons-ui/react-core";
-import { ReactNode } from "react";
+import { PropsWithChildren, ReactNode } from "react";
 
 export type TToast = {
   message: string;
@@ -18,6 +18,7 @@ export type TToastStoreState = {
   toastHeight: string;
   animationDirection: AnimationDirection;
   updateToastAnimationDirection: (direction: AnimationDirection) => void;
+  type: ToastType;
   updateType: (type: ToastType) => void;
 };
 
@@ -38,3 +39,19 @@ export type AnimationDirection =
   | "topToBottom"
   | "leftToRight"
   | "rightToLeft";
+
+export type OverlapToastsProps = {
+  direction: Directions;
+  animationDirection: Exclude<
+    Directions,
+    "topLeft" | "topRight" | "bottomLeft" | "bottomRight"
+  >;
+} & PropsWithChildren;
+
+export type StackToastsProps = {
+  direction: Directions;
+  animationDirection: Exclude<
+    Directions,
+    "topLeft" | "topRight" | "bottomLeft" | "bottomRight"
+  >;
+} & PropsWithChildren;
