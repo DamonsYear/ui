@@ -1,7 +1,7 @@
 import { basePropsCSS } from "@damons-ui/react-core";
 import { Directions } from "./types";
 import styled, { css } from "css-in-js";
-import { ToastsContainerStyledProps } from "./Toasts";
+import { StyledToastsContainerProps } from "./types";
 import { Variants } from "framer-motion";
 
 const bottomAnimation = {
@@ -135,7 +135,7 @@ export const getVarient = (direction: Directions): Variants => {
   }
 };
 
-export const Container = styled.div<ToastsContainerStyledProps>`
+export const Container = styled.div<StyledToastsContainerProps>`
   position: fixed;
   z-index: 10000;
 
@@ -228,7 +228,7 @@ export const Container = styled.div<ToastsContainerStyledProps>`
   }}
 `;
 
-export const Item = styled.div<ToastsContainerStyledProps>`
+export const Item = styled.div<StyledToastsContainerProps>`
   position: absolute;
 
   &:first-of-type {

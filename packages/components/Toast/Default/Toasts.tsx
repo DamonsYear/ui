@@ -1,15 +1,10 @@
-import React, { PropsWithChildren, useEffect } from "react";
-import { CSSProps } from "@damons-ui/react-core";
-import { Directions, OverlapToastsProps, StackToastsProps } from "./types";
+import React, { useEffect } from "react";
+
+import { OverlapToastsProps, StackToastsProps } from "./types";
 import { useToast } from "./context";
 import { AnimatePresence, LazyMotion, domAnimation, m } from "framer-motion";
 
 import * as S from "./styles";
-
-export type ToastsContainerStyledProps = { direction: Directions } & CSSProps;
-
-export type ToastsProps = { direction: Directions } & PropsWithChildren &
-  CSSProps;
 
 export const Toasts = ({ ...props }: OverlapToastsProps) => {
   const { type } = useToast();
