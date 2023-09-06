@@ -26,7 +26,7 @@ export const Toasts = ({ ...props }: OverlapToastsProps) => {
 
 export const StackToasts = ({
   direction = "top",
-  animationDirection = "top",
+  animationDirection = "topToBottom",
   ...props
 }: StackToastsProps) => {
   const { toasts, remove, updateDirection } = useToast();
@@ -67,7 +67,7 @@ StackToasts.Item = m(S.Item, { forwardMotionProps: true });
 
 export const OverlapToasts = ({
   direction = "top",
-  animationDirection = "top",
+  animationDirection = "bottomToTop",
   ...props
 }: OverlapToastsProps) => {
   const { toasts, remove, updateDirection } = useToast();

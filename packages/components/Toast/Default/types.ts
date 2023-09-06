@@ -44,10 +44,7 @@ export type AnimationDirection =
 
 export type ToastsProps = {
   direction: Directions;
-  animationDirection: Exclude<
-    Directions,
-    "topLeft" | "topRight" | "bottomLeft" | "bottomRight"
-  >;
+  animationDirection?: AnimationDirection;
 } & PropsWithChildren;
 export type OverlapToastsProps = ToastsProps;
 

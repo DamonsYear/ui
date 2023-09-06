@@ -1,5 +1,5 @@
 import { basePropsCSS } from "@damons-ui/react-core";
-import { Directions } from "./types";
+import { AnimationDirection } from "./types";
 import styled, { css } from "css-in-js";
 import { StyledToastsContainerProps } from "./types";
 import { Variants } from "framer-motion";
@@ -61,9 +61,9 @@ const toastBaseAnimation = {
   },
 };
 
-export const getVarient = (direction: Directions): Variants => {
+export const getVarient = (direction: AnimationDirection): Variants => {
   switch (direction) {
-    case "top": {
+    case "bottomToTop": {
       return {
         initial: {
           ...toastBaseAnimation.initial,
@@ -80,7 +80,7 @@ export const getVarient = (direction: Directions): Variants => {
       };
     }
 
-    case "right": {
+    case "leftToRight": {
       return {
         initial: {
           ...toastBaseAnimation.initial,
@@ -96,7 +96,7 @@ export const getVarient = (direction: Directions): Variants => {
         },
       };
     }
-    case "bottom": {
+    case "topToBottom": {
       return {
         initial: {
           ...toastBaseAnimation.initial,
@@ -112,7 +112,7 @@ export const getVarient = (direction: Directions): Variants => {
         },
       };
     }
-    case "left": {
+    case "rightToLeft": {
       return {
         initial: {
           ...toastBaseAnimation.initial,
