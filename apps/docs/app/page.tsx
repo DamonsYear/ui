@@ -27,7 +27,7 @@ export default function Page() {
 
   return (
     <>
-      <Toasts direction="top" />
+      <Toasts direction="top" type="stack" />
       <Toasts direction="topRight" />
       <Toasts direction="topLeft" />
       <Toasts direction="left" />

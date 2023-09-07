@@ -1,13 +1,22 @@
 import React, { useEffect } from "react";
 
-import { OverlapToastsProps, StackToastsProps } from "./types";
+import { OverlapToastsProps, StackToastsProps, ToastsProps } from "./types";
 import { useToast } from "./context";
 import { AnimatePresence, LazyMotion, domAnimation, m } from "framer-motion";
 
 import * as S from "./styles";
 
-export const Toasts = ({ ...props }: OverlapToastsProps) => {
-  const { type } = useToast();
+export const Toasts = ({
+  type: propsType = "overlap",
+  ...props
+}: ToastsProps) => {
+  const { type: toastType, updateType } = useToast();
+
+  const type = propsType ?? toastType;
+
+  React.useEffect(() => {
+    updateType(type);
+  }, []);
 
   switch (type) {
     case "stack": {
@@ -52,7 +61,7 @@ export const StackToasts = ({
               {toast.icon}
               {toast.message}
 
-              <button onClick={() => remove(id)}>❌</button>
+              <button onClick={() => remove(id)}>O</button>
             </StackToasts.Item>
           ))}
         </AnimatePresence>
@@ -63,7 +72,7 @@ export const StackToasts = ({
 
 StackToasts.Container = S.Container;
 
-StackToasts.Item = m(S.Item, { forwardMotionProps: true });
+StackToasts.Item = m(S.StackItem, { forwardMotionProps: true });
 
 export const OverlapToasts = ({
   direction = "top",

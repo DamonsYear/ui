@@ -329,3 +329,104 @@ export const Item = styled.div<StyledToastsContainerProps>`
     }
   }}
 `;
+
+export const StackItem = styled.div<StyledToastsContainerProps>`
+  background-color: red;
+  &:first-of-type {
+    position: relative;
+  }
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  width: 300px;
+  height: 64px;
+
+  padding: 16px;
+
+  box-shadow: 0px 3px 4px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+
+  background-color: #fff;
+
+  img {
+    margin-right: 8px;
+  }
+
+  color: #333;
+  font-size: 14px;
+
+  ${basePropsCSS}
+
+  ${(props) => {
+    if (!props.direction) return;
+
+    switch (props.direction) {
+      case "top": {
+        return css`
+          top: 0;
+          left: 0;
+          margin-top: 12px;
+        `;
+      }
+      case "topLeft": {
+        return css`
+          top: 0;
+          left: 0;
+          margin-top: 12px;
+          margin-left: 12px;
+        `;
+      }
+      case "topRight": {
+        return css`
+          top: 0;
+          right: 0;
+          margin-top: 12px;
+          margin-right: 12px;
+        `;
+      }
+      case "left": {
+        return css`
+          left: 0;
+          margin-left: 12px;
+        `;
+      }
+
+      case "right": {
+        return css`
+          right: 0;
+          margin-right: 12px;
+        `;
+      }
+
+      case "bottom": {
+        return css`
+          bottom: 0;
+          margin-bottom: 12px;
+        `;
+      }
+      case "bottomLeft": {
+        return css`
+          bottom: 0;
+          left: 0;
+          margin-bottom: 12px;
+          margin-left: 12px;
+        `;
+      }
+      case "bottomRight": {
+        return css`
+          bottom: 0;
+          right: 0;
+          margin-bottom: 12px;
+          margin-right: 12px;
+        `;
+      }
+
+      default: {
+        return;
+      }
+    }
+  }}
+`;

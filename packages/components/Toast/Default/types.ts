@@ -43,9 +43,11 @@ export type AnimationDirection =
   | "rightToLeft";
 
 export type ToastsProps = {
+  type?: ToastType;
   direction: Directions;
   animationDirection?: AnimationDirection;
 } & PropsWithChildren;
+
 export type OverlapToastsProps = ToastsProps;
 
 export type StackToastsProps = ToastsProps;
