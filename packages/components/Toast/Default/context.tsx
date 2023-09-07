@@ -25,6 +25,9 @@ const ToastContext = createContext<TToastStoreState>({
 
   type: "overlap",
   updateType: () => {},
+
+  toastGutter: "0px",
+  updateToastGutter: () => {},
 });
 
 export const ToastProvider = ({ children }: PropsWithChildren) => {
@@ -33,7 +36,10 @@ export const ToastProvider = ({ children }: PropsWithChildren) => {
   const [toasts, setToasts] = useState<TToastStoreState["toasts"]>(new Map());
 
   const [toastHeight, setToastHeight] =
-    useState<TToastStoreState["toastHeight"]>("0px");
+    useState<TToastStoreState["toastHeight"]>("64px");
+
+  const [toastGutter, setToastGutter] =
+    useState<TToastStoreState["toastGutter"]>("12px");
 
   const [direction, setDirection] =
     useState<TToastStoreState["direction"]>("top");
@@ -80,6 +86,10 @@ export const ToastProvider = ({ children }: PropsWithChildren) => {
     setToastHeight(height);
   };
 
+  const updateToastGutter: TToastStoreState["updateToastGutter"] = (gutter) => {
+    setToastGutter(gutter);
+  };
+
   const updateToastAnimationDirection: TToastStoreState["updateToastAnimationDirection"] =
     (direction) => {
       setAnimationDirection(direction);
@@ -98,6 +108,9 @@ export const ToastProvider = ({ children }: PropsWithChildren) => {
 
       toastHeight,
       updateToastHeight,
+
+      toastGutter,
+      updateToastGutter,
 
       animationDirection,
       updateToastAnimationDirection,

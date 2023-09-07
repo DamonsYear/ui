@@ -36,17 +36,50 @@ export const Toasts = ({
 export const StackToasts = ({
   direction = "top",
   animationDirection = "topToBottom",
-  ...props
+  toastHeight: propsToastHeight,
+  toastGutter: propsToastGutter,
 }: StackToastsProps) => {
-  const { toasts, remove, updateDirection } = useToast();
+  const {
+    toastHeight: stateToastHeight,
+    toastGutter: stateToastGutter,
+    toasts,
+    remove,
+    updateDirection,
+    updateToastHeight,
+    updateToastGutter,
+  } = useToast();
+
+  const toastHeight = propsToastHeight ?? stateToastHeight;
+  const toastGutter = propsToastGutter ?? stateToastGutter;
+
+  const getHeight = ({
+    heightUnit = "px",
+    gutterUnit = "px",
+  }: {
+    heightUnit?: "px";
+    gutterUnit?: "px";
+  }) => {
+    const height = toastHeight.replace(heightUnit, "");
+    const gutter = toastGutter.replace(gutterUnit, "");
+
+    return (Number(height) + Number(gutter)) * toasts.size + "px";
+  };
+
+  console.log({ toastHeight, toastGutter });
 
   useEffect(() => {
     updateDirection(direction);
+
+    updateToastHeight(toastHeight);
+    updateToastGutter(toastGutter);
   }, [direction]);
 
   return (
     <LazyMotion features={domAnimation}>
-      <StackToasts.Container direction={direction} {...props}>
+      <StackToasts.Container
+        direction={direction}
+        height={getHeight({ heightUnit: "px", gutterUnit: "px" })}
+      >
         <AnimatePresence>
           {[...toasts].map(([id, toast], index) => (
             <StackToasts.Item

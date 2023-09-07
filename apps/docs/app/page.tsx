@@ -32,7 +32,7 @@ export default function Page() {
       <Toasts direction="topLeft" />
       <Toasts direction="left" />
       <Toasts direction="right" />
-      <Toasts direction="bottom" />
+      <Toasts direction="bottom" type="stack" />
       <Toasts direction="bottomLeft" />
       <Toasts direction="bottomRight" />
 
