@@ -61,17 +61,22 @@ const toastBaseAnimation = {
   },
 };
 
-export const getVarient = (direction: AnimationDirection): Variants => {
+export const getVarient = (
+  direction: AnimationDirection,
+  height?: number
+): Variants => {
   switch (direction) {
     case "bottomToTop": {
       return {
         initial: {
           ...toastBaseAnimation.initial,
           ...topAnimation.from,
+          // y: -height,
         },
         animate: {
           ...toastBaseAnimation.animate,
           ...topAnimation.to,
+          // y: 0,
         },
         exit: {
           ...toastBaseAnimation.exit,
@@ -101,10 +106,12 @@ export const getVarient = (direction: AnimationDirection): Variants => {
         initial: {
           ...toastBaseAnimation.initial,
           ...bottomAnimation.from,
+          ...(height ? { y: height - 76 } : {}),
         },
         animate: {
           ...toastBaseAnimation.animate,
           ...bottomAnimation.to,
+          y: height,
         },
         exit: {
           ...toastBaseAnimation.exit,
@@ -331,6 +338,8 @@ export const Item = styled.div<StyledToastsContainerProps>`
 `;
 
 export const StackItem = styled.div<StyledToastsContainerProps>`
+  position: absolute;
+
   background-color: red;
   &:first-of-type {
     position: relative;

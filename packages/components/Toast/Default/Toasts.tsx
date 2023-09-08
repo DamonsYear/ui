@@ -62,7 +62,7 @@ export const StackToasts = ({
     const height = toastHeight.replace(heightUnit, "");
     const gutter = toastGutter.replace(gutterUnit, "");
 
-    return (Number(height) + Number(gutter)) * toasts.size + "px";
+    return Number(height) + Number(gutter);
   };
 
   console.log({ toastHeight, toastGutter });
@@ -76,16 +76,16 @@ export const StackToasts = ({
 
   return (
     <LazyMotion features={domAnimation}>
-      <StackToasts.Container
-        direction={direction}
-        height={getHeight({ heightUnit: "px", gutterUnit: "px" })}
-      >
+      <StackToasts.Container direction={direction}>
         <AnimatePresence>
           {[...toasts].map(([id, toast], index) => (
             <StackToasts.Item
               key={id}
               direction={direction}
-              variants={S.getVarient(animationDirection)}
+              variants={S.getVarient(
+                animationDirection,
+                getHeight({ heightUnit: "px", gutterUnit: "px" }) * index
+              )}
               initial="initial"
               animate="animate"
               exit="exit"
