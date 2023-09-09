@@ -28,17 +28,21 @@ export default function Page() {
   return (
     <>
       <Toasts direction="top" type="stack" />
-      <Toasts direction="topRight" />
+      <Toasts direction="topRight" type="stack" />
       <Toasts direction="topLeft" />
-      <Toasts direction="left" animationDirection="leftToRight" />
-      <Toasts direction="right" />
+      <Toasts direction="left" type="stack" animationDirection="leftToRight" />
+      <Toasts direction="right" type="stack" />
       <Toasts
         direction="bottom"
         type="stack"
         animationDirection="bottomToTop"
       />
-      <Toasts direction="bottomLeft" />
-      <Toasts direction="bottomRight" />
+      <Toasts
+        direction="bottomLeft"
+        type="stack"
+        animationDirection="bottomToTop"
+      />
+      <Toasts direction="bottomRight" animationDirection="bottomToTop" />
 
       <button
         onClick={onAddToast}

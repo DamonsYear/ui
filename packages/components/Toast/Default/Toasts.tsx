@@ -61,7 +61,7 @@ export const StackToasts = ({
                 direction: animationDirection,
                 height:
                   (getNumber(toastHeight) + getNumber(toastGutter)) * index,
-                toastHeight: getNumber(toastHeight),
+                toastHeight: getNumber(toastHeight) + getNumber(toastGutter),
               })}
               initial="initial"
               animate="animate"

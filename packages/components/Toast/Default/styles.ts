@@ -113,7 +113,7 @@ export const getStackVarient = ({
         initial: {
           ...toastBaseAnimation.initial,
           ...leftAnimation.from,
-          ...nextHeight.initial,
+          ...(nextHeight.initial.y ? nextHeight.initial : { y: 0 }),
         },
         animate: {
           ...toastBaseAnimation.animate,
@@ -123,6 +123,7 @@ export const getStackVarient = ({
         exit: {
           ...toastBaseAnimation.exit,
           ...leftAnimation.from,
+          ...(nextHeight.initial.y ? nextHeight.initial : { y: 0 }),
         },
       };
     }
@@ -149,7 +150,7 @@ export const getStackVarient = ({
         initial: {
           ...toastBaseAnimation.initial,
           ...rightAnimation.from,
-          ...nextHeight.initial,
+          ...(nextHeight.initial.y ? nextHeight.initial : { y: 0 }),
         },
         animate: {
           ...toastBaseAnimation.animate,
@@ -159,6 +160,7 @@ export const getStackVarient = ({
         exit: {
           ...toastBaseAnimation.exit,
           ...rightAnimation.from,
+          ...(nextHeight.initial.y ? nextHeight.initial : { y: 0 }),
         },
       };
     }
