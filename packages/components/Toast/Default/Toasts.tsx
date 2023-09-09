@@ -1,10 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import { OverlapToastsProps, StackToastsProps, ToastsProps } from "./types";
 import { useToast } from "./context";
 import { AnimatePresence, LazyMotion, domAnimation, m } from "framer-motion";
 
 import * as S from "./styles";
+import { useToasts } from "./hooks";
+import { getNumber } from "./utils";
 
 export const Toasts = ({
   type: propsType = "overlap",
@@ -39,40 +41,13 @@ export const StackToasts = ({
   toastHeight: propsToastHeight,
   toastGutter: propsToastGutter,
 }: StackToastsProps) => {
-  const {
-    toastHeight: stateToastHeight,
-    toastGutter: stateToastGutter,
-    toasts,
-    remove,
-    updateDirection,
-    updateToastHeight,
-    updateToastGutter,
-  } = useToast();
+  const { toasts, remove } = useToast();
 
-  const toastHeight = propsToastHeight ?? stateToastHeight;
-  const toastGutter = propsToastGutter ?? stateToastGutter;
-
-  const getHeight = ({
-    heightUnit = "px",
-    gutterUnit = "px",
-  }: {
-    heightUnit?: "px";
-    gutterUnit?: "px";
-  }) => {
-    const height = toastHeight.replace(heightUnit, "");
-    const gutter = toastGutter.replace(gutterUnit, "");
-
-    return Number(height) + Number(gutter);
-  };
-
-  console.log({ toastHeight, toastGutter });
-
-  useEffect(() => {
-    updateDirection(direction);
-
-    updateToastHeight(toastHeight);
-    updateToastGutter(toastGutter);
-  }, [direction]);
+  const { toastHeight, toastGutter } = useToasts({
+    direction,
+    toastHeight: propsToastHeight,
+    toastGutter: propsToastGutter,
+  });
 
   return (
     <LazyMotion features={domAnimation}>
@@ -82,19 +57,22 @@ export const StackToasts = ({
             <StackToasts.Item
               key={id}
               direction={direction}
-              variants={S.getVarient(
-                animationDirection,
-                getHeight({ heightUnit: "px", gutterUnit: "px" }) * index
-              )}
+              variants={S.getStackVarient({
+                direction: animationDirection,
+                height:
+                  (getNumber(toastHeight) + getNumber(toastGutter)) * index,
+                toastHeight: getNumber(toastHeight),
+              })}
               initial="initial"
               animate="animate"
               exit="exit"
               zIndex={index}
+              gutter={toastGutter}
             >
               {toast.icon}
               {toast.message}
 
-              <button onClick={() => remove(id)}>O</button>
+              <button onClick={() => remove(id)}>❌</button>
             </StackToasts.Item>
           ))}
         </AnimatePresence>
@@ -105,19 +83,22 @@ export const StackToasts = ({
 
 StackToasts.Container = S.Container;
 
-StackToasts.Item = m(S.StackItem, { forwardMotionProps: true });
+StackToasts.Item = m(S.Item, { forwardMotionProps: true });
 
 export const OverlapToasts = ({
   direction = "top",
-  animationDirection = "bottomToTop",
+  animationDirection = "topToBottom",
+  toastHeight: propsToastHeight = "64px",
+  toastGutter: propsToastGutter,
   ...props
 }: OverlapToastsProps) => {
-  const { toasts, remove, updateDirection } = useToast();
+  const { toasts, remove } = useToast();
 
-  useEffect(() => {
-    updateDirection(direction);
-  }, [direction]);
-
+  const { toastGutter } = useToasts({
+    direction,
+    toastHeight: propsToastHeight,
+    toastGutter: propsToastGutter,
+  });
   return (
     <LazyMotion features={domAnimation}>
       <OverlapToasts.Container direction={direction} {...props}>
@@ -126,11 +107,14 @@ export const OverlapToasts = ({
             <OverlapToasts.Item
               key={id}
               direction={direction}
-              variants={S.getVarient(animationDirection)}
+              variants={S.getOverlapVarient({
+                direction: animationDirection,
+              })}
               initial="initial"
               animate="animate"
               exit="exit"
               zIndex={index}
+              gutter={toastGutter}
             >
               {toast.icon}
               {toast.message}

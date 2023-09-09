@@ -30,9 +30,13 @@ export default function Page() {
       <Toasts direction="top" type="stack" />
       <Toasts direction="topRight" />
       <Toasts direction="topLeft" />
-      <Toasts direction="left" />
+      <Toasts direction="left" animationDirection="leftToRight" />
       <Toasts direction="right" />
-      <Toasts direction="bottom" type="stack" />
+      <Toasts
+        direction="bottom"
+        type="stack"
+        animationDirection="bottomToTop"
+      />
       <Toasts direction="bottomLeft" />
       <Toasts direction="bottomRight" />
 

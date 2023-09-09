@@ -1,7 +1,13 @@
 import { CSSProps } from "@damons-ui/react-core";
 import { ReactNode } from "react";
 
-export type StyledToastsContainerProps = { direction: Directions } & CSSProps;
+export type StyledToastsContainerProps = {
+  direction: Directions;
+} & CSSProps;
+export type StyledToastItemProps = {
+  direction: Directions;
+  gutter: string;
+} & CSSProps;
 
 export type TToast = {
   message: string;
@@ -48,9 +54,13 @@ export type ToastsProps = {
   type?: ToastType;
   direction: Directions;
   animationDirection?: AnimationDirection;
+  toastGutter?: TToastStoreState["toastGutter"];
 };
 
-export type OverlapToastsProps = Omit<ToastsProps, "type">;
+export type OverlapToastsProps = {
+  toastHeight?: TToastStoreState["toastHeight"];
+  toastGutter?: TToastStoreState["toastGutter"];
+} & Omit<ToastsProps, "type" | "toastGutter">;
 
 export type StackToastsProps = Partial<
   Pick<TToastStoreState, "toastHeight" | "toastGutter">

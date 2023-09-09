@@ -1,5 +1,5 @@
 import { basePropsCSS } from "@damons-ui/react-core";
-import { AnimationDirection } from "./types";
+import { AnimationDirection, StyledToastItemProps } from "./types";
 import styled, { css } from "css-in-js";
 import { StyledToastsContainerProps } from "./types";
 import { Variants } from "framer-motion";
@@ -61,26 +61,49 @@ const toastBaseAnimation = {
   },
 };
 
-export const getVarient = (
-  direction: AnimationDirection,
-  height?: number
-): Variants => {
+export const getStackVarient = ({
+  direction,
+  height,
+  toastHeight,
+}: {
+  direction: AnimationDirection;
+  toastHeight: number;
+  height?: number;
+}): Variants => {
+  const nextHeight = (() => {
+    if (!height)
+      return {
+        initial: {},
+        animate: {},
+      };
+
+    return ["topToBottom", "leftToRight", "rightToLeft"].includes(direction)
+      ? {
+          initial: { y: height - toastHeight },
+          animate: { y: height },
+        }
+      : {
+          initial: { y: -1 * (height - toastHeight) },
+          animate: { y: -1 * height },
+        };
+  })();
+
   switch (direction) {
     case "bottomToTop": {
       return {
         initial: {
           ...toastBaseAnimation.initial,
-          ...topAnimation.from,
-          // y: -height,
+          ...bottomAnimation.from,
+          ...nextHeight.initial,
         },
         animate: {
           ...toastBaseAnimation.animate,
           ...topAnimation.to,
-          // y: 0,
+          ...nextHeight.animate,
         },
         exit: {
           ...toastBaseAnimation.exit,
-          ...topAnimation.from,
+          ...bottomAnimation.from,
         },
       };
     }
@@ -89,15 +112,17 @@ export const getVarient = (
       return {
         initial: {
           ...toastBaseAnimation.initial,
-          ...rightAnimation.from,
+          ...leftAnimation.from,
+          ...nextHeight.initial,
         },
         animate: {
           ...toastBaseAnimation.animate,
           ...rightAnimation.to,
+          ...nextHeight.animate,
         },
         exit: {
           ...toastBaseAnimation.exit,
-          ...rightAnimation.from,
+          ...leftAnimation.from,
         },
       };
     }
@@ -105,17 +130,17 @@ export const getVarient = (
       return {
         initial: {
           ...toastBaseAnimation.initial,
-          ...bottomAnimation.from,
-          ...(height ? { y: height - 76 } : {}),
+          ...topAnimation.from,
+          ...nextHeight.initial,
         },
         animate: {
           ...toastBaseAnimation.animate,
           ...bottomAnimation.to,
-          y: height,
+          ...nextHeight.animate,
         },
         exit: {
           ...toastBaseAnimation.exit,
-          ...bottomAnimation.from,
+          ...topAnimation.from,
         },
       };
     }
@@ -123,7 +148,87 @@ export const getVarient = (
       return {
         initial: {
           ...toastBaseAnimation.initial,
+          ...rightAnimation.from,
+          ...nextHeight.initial,
+        },
+        animate: {
+          ...toastBaseAnimation.animate,
+          ...leftAnimation.to,
+          ...nextHeight.animate,
+        },
+        exit: {
+          ...toastBaseAnimation.exit,
+          ...rightAnimation.from,
+        },
+      };
+    }
+
+    default: {
+      throw new Error("invalid direction");
+    }
+  }
+};
+
+export const getOverlapVarient = ({
+  direction,
+}: {
+  direction: AnimationDirection;
+}): Variants => {
+  switch (direction) {
+    case "bottomToTop": {
+      return {
+        initial: {
+          ...toastBaseAnimation.initial,
+          ...bottomAnimation.from,
+        },
+        animate: {
+          ...toastBaseAnimation.animate,
+          ...topAnimation.to,
+        },
+        exit: {
+          ...toastBaseAnimation.exit,
+          ...bottomAnimation.from,
+        },
+      };
+    }
+
+    case "leftToRight": {
+      return {
+        initial: {
+          ...toastBaseAnimation.initial,
           ...leftAnimation.from,
+        },
+        animate: {
+          ...toastBaseAnimation.animate,
+          ...rightAnimation.to,
+        },
+        exit: {
+          ...toastBaseAnimation.exit,
+          ...leftAnimation.from,
+        },
+      };
+    }
+    case "topToBottom": {
+      return {
+        initial: {
+          ...toastBaseAnimation.initial,
+          ...topAnimation.from,
+        },
+        animate: {
+          ...toastBaseAnimation.animate,
+          ...bottomAnimation.to,
+        },
+        exit: {
+          ...toastBaseAnimation.exit,
+          ...topAnimation.from,
+        },
+      };
+    }
+    case "rightToLeft": {
+      return {
+        initial: {
+          ...toastBaseAnimation.initial,
+          ...rightAnimation.from,
         },
         animate: {
           ...toastBaseAnimation.animate,
@@ -131,7 +236,7 @@ export const getVarient = (
         },
         exit: {
           ...toastBaseAnimation.exit,
-          ...leftAnimation.from,
+          ...rightAnimation.from,
         },
       };
     }
@@ -235,7 +340,7 @@ export const Container = styled.div<StyledToastsContainerProps>`
   }}
 `;
 
-export const Item = styled.div<StyledToastsContainerProps>`
+export const Item = styled.div<StyledToastItemProps>`
   position: absolute;
 
   &:first-of-type {
@@ -274,162 +379,59 @@ export const Item = styled.div<StyledToastsContainerProps>`
         return css`
           top: 0;
           left: 0;
-          margin-top: 12px;
+          margin-top: ${props.gutter};
         `;
       }
       case "topLeft": {
         return css`
           top: 0;
           left: 0;
-          margin-top: 12px;
-          margin-left: 12px;
+          margin-top: ${props.gutter};
+          margin-left: ${props.gutter};
         `;
       }
       case "topRight": {
         return css`
           top: 0;
           right: 0;
-          margin-top: 12px;
-          margin-right: 12px;
+          margin-top: ${props.gutter};
+          margin-right: ${props.gutter};
         `;
       }
       case "left": {
         return css`
           left: 0;
-          margin-left: 12px;
+          margin-left: ${props.gutter};
         `;
       }
 
       case "right": {
         return css`
           right: 0;
-          margin-right: 12px;
+          margin-right: ${props.gutter};
         `;
       }
 
       case "bottom": {
         return css`
           bottom: 0;
-          margin-bottom: 12px;
+          margin-bottom: ${props.gutter};
         `;
       }
       case "bottomLeft": {
         return css`
           bottom: 0;
           left: 0;
-          margin-bottom: 12px;
-          margin-left: 12px;
+          margin-bottom: ${props.gutter};
+          margin-left: ${props.gutter};
         `;
       }
       case "bottomRight": {
         return css`
           bottom: 0;
           right: 0;
-          margin-bottom: 12px;
-          margin-right: 12px;
-        `;
-      }
-
-      default: {
-        return;
-      }
-    }
-  }}
-`;
-
-export const StackItem = styled.div<StyledToastsContainerProps>`
-  position: absolute;
-
-  background-color: red;
-  &:first-of-type {
-    position: relative;
-  }
-
-  box-sizing: border-box;
-
-  display: flex;
-  align-items: center;
-
-  width: 300px;
-  height: 64px;
-
-  padding: 16px;
-
-  box-shadow: 0px 3px 4px 2px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-
-  background-color: #fff;
-
-  img {
-    margin-right: 8px;
-  }
-
-  color: #333;
-  font-size: 14px;
-
-  ${basePropsCSS}
-
-  ${(props) => {
-    if (!props.direction) return;
-
-    switch (props.direction) {
-      case "top": {
-        return css`
-          top: 0;
-          left: 0;
-          margin-top: 12px;
-        `;
-      }
-      case "topLeft": {
-        return css`
-          top: 0;
-          left: 0;
-          margin-top: 12px;
-          margin-left: 12px;
-        `;
-      }
-      case "topRight": {
-        return css`
-          top: 0;
-          right: 0;
-          margin-top: 12px;
-          margin-right: 12px;
-        `;
-      }
-      case "left": {
-        return css`
-          left: 0;
-          margin-left: 12px;
-        `;
-      }
-
-      case "right": {
-        return css`
-          right: 0;
-          margin-right: 12px;
-        `;
-      }
-
-      case "bottom": {
-        return css`
-          bottom: 0;
-          margin-bottom: 12px;
-        `;
-      }
-      case "bottomLeft": {
-        return css`
-          bottom: 0;
-          left: 0;
-          margin-bottom: 12px;
-          margin-left: 12px;
-        `;
-      }
-      case "bottomRight": {
-        return css`
-          bottom: 0;
-          right: 0;
-          margin-bottom: 12px;
-          margin-right: 12px;
+          margin-bottom: ${props.gutter};
+          margin-right: ${props.gutter};
         `;
       }
 
