@@ -1,20 +1,24 @@
 "use client";
 
-import Box from "@damons-ui/box";
-import { Button } from "@damons-ui/button";
-import { FixedToast } from "@damons-ui/toast";
-import styled from "css-in-js";
+import { FixedToast, Toasts, useToast } from "@damons-ui/toast";
+import Image from "next/image";
+
 import { useState } from "react";
 
-const Div = styled.div`
-  color: red;
-  background-color: #111;
-`;
+import { v4 as uuidv4 } from "uuid";
+
 export default function Page() {
   const [isActive, setIsActive] = useState(false);
 
-  const onToggle = () => {
-    setIsActive((state) => !state);
+  const { add } = useToast();
+
+  const onAddToast = () => {
+    const id = uuidv4();
+
+    add(id, {
+      message: id,
+      icon: <Image src="/success.svg" alt="info" width={24} height={24} />,
+    });
   };
 
   const onClose = () => {
@@ -23,34 +27,30 @@ export default function Page() {
 
   return (
     <>
-      <Box color="#fb0" background="#333">
-        Hello World!
-        <Div>HEllo...</Div>
-        <button onClick={onToggle}>CLICK</button>
-        <Button background="#124215">CLICK!!!</Button>
-        <Button background="red">CLICK!!!</Button>
-        <Button
-          color="white"
-          position="relative"
-          background="purple"
-          _after={{
-            cursor: "pointer",
-            content: "",
-            position: "fixed",
-            width: "100%",
-            height: "100%",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            zIndex: 1,
-            background: "white",
-            marginLeft: "10px",
-          }}
-        >
-          CLIC2K!!!!!
-        </Button>
-      </Box>
+      <Toasts direction="top" type="stack" />
+      <Toasts direction="topRight" type="stack" />
+      <Toasts direction="topLeft" />
+      <Toasts direction="left" type="stack" animationDirection="leftToRight" />
+      <Toasts direction="right" type="stack" />
+      <Toasts
+        direction="bottom"
+        type="stack"
+        animationDirection="bottomToTop"
+      />
+      <Toasts
+        direction="bottomLeft"
+        type="stack"
+        animationDirection="bottomToTop"
+      />
+      <Toasts direction="bottomRight" animationDirection="bottomToTop" />
+
+      <button
+        onClick={onAddToast}
+        style={{ position: "relative", zIndex: 100000000 }}
+      >
+        CLICK
+      </button>
+
       <FixedToast
         isActive={isActive}
         backgroundColor="#123467"

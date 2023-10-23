@@ -1,4 +1,7 @@
+"use client";
+
 import StyledComponentsRegistry from "../lib/Registry";
+import { ToastProvider } from "@damons-ui/toast";
 
 export default function RootLayout({
   children,
@@ -8,7 +11,9 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <StyledComponentsRegistry>
+          <ToastProvider>{children}</ToastProvider>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
